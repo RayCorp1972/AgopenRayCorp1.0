@@ -198,7 +198,9 @@ namespace AgOpenGPS
                 //XmlNodeList namelist = root.GetElementsByTagName("name");
                 XmlNodeList namelist = root.GetElementsByTagName("SimpleData");
                 XmlNodeList desclist = root.GetElementsByTagName("description");
-
+                
+                
+                // werkt nu well / lijn mnamen importeren
                 if (namelist.Count > 4)
                 {
                     shortName = namelist[4].InnerText;
