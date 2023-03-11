@@ -291,7 +291,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(384, 44);
             this.textBox1.TabIndex = 429;
-            this.textBox1.Text = "Line Name Here";
+            this.textBox1.Text = "AB lijn naam hier";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnCancel

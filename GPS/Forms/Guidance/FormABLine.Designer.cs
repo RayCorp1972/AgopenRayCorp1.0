@@ -79,7 +79,7 @@
             this.lvLines.Margin = new System.Windows.Forms.Padding(0);
             this.lvLines.MultiSelect = false;
             this.lvLines.Name = "lvLines";
-            this.lvLines.Size = new System.Drawing.Size(350, 230);
+            this.lvLines.Size = new System.Drawing.Size(350, 213);
             this.lvLines.TabIndex = 153;
             this.lvLines.TileSize = new System.Drawing.Size(350, 35);
             this.lvLines.UseCompatibleStateImageBehavior = false;
@@ -318,9 +318,9 @@
             this.panelPick.Controls.Add(this.btnCancel);
             this.panelPick.Controls.Add(this.btnListUse);
             this.panelPick.Controls.Add(this.btnListDelete);
-            this.panelPick.Location = new System.Drawing.Point(12, 21);
+            this.panelPick.Location = new System.Drawing.Point(12, -1);
             this.panelPick.Name = "panelPick";
-            this.panelPick.Size = new System.Drawing.Size(442, 313);
+            this.panelPick.Size = new System.Drawing.Size(442, 335);
             this.panelPick.TabIndex = 434;
             // 
             // btnSwapAB
@@ -381,11 +381,13 @@
             this.btnNewABLine.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewABLine.Image = global::AgOpenGPS.Properties.Resources.AddNew;
             this.btnNewABLine.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnNewABLine.Location = new System.Drawing.Point(236, 243);
+            this.btnNewABLine.Location = new System.Drawing.Point(234, 221);
             this.btnNewABLine.Name = "btnNewABLine";
-            this.btnNewABLine.Size = new System.Drawing.Size(73, 63);
+            this.btnNewABLine.Size = new System.Drawing.Size(73, 107);
             this.btnNewABLine.TabIndex = 149;
+            this.btnNewABLine.Text = "Nieuw";
             this.btnNewABLine.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNewABLine.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnNewABLine.UseVisualStyleBackColor = false;
             this.btnNewABLine.Click += new System.EventHandler(this.BtnNewABLine_Click);
             this.btnNewABLine.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.btnNewABLine_HelpRequested);
@@ -397,13 +399,15 @@
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Tahoma", 14.25F);
+            this.btnCancel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Image = global::AgOpenGPS.Properties.Resources.SwitchOff;
             this.btnCancel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCancel.Location = new System.Drawing.Point(121, 243);
+            this.btnCancel.Location = new System.Drawing.Point(121, 224);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(73, 63);
+            this.btnCancel.Size = new System.Drawing.Size(80, 107);
             this.btnCancel.TabIndex = 421;
+            this.btnCancel.Text = "Sluiten";
+            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             this.btnCancel.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.btnCancel_HelpRequested);
@@ -417,11 +421,13 @@
             this.btnListUse.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnListUse.Image = global::AgOpenGPS.Properties.Resources.OK64;
             this.btnListUse.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnListUse.Location = new System.Drawing.Point(365, 243);
+            this.btnListUse.Location = new System.Drawing.Point(348, 221);
             this.btnListUse.Name = "btnListUse";
-            this.btnListUse.Size = new System.Drawing.Size(73, 63);
+            this.btnListUse.Size = new System.Drawing.Size(73, 107);
             this.btnListUse.TabIndex = 86;
+            this.btnListUse.Text = "Ok";
             this.btnListUse.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnListUse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnListUse.UseVisualStyleBackColor = false;
             this.btnListUse.Click += new System.EventHandler(this.btnListUse_Click);
             this.btnListUse.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.btnListUse_HelpRequested);
@@ -434,11 +440,13 @@
             this.btnListDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListDelete.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnListDelete.Image = global::AgOpenGPS.Properties.Resources.ABLineDelete;
-            this.btnListDelete.Location = new System.Drawing.Point(6, 243);
+            this.btnListDelete.Location = new System.Drawing.Point(6, 221);
             this.btnListDelete.Name = "btnListDelete";
-            this.btnListDelete.Size = new System.Drawing.Size(73, 63);
+            this.btnListDelete.Size = new System.Drawing.Size(91, 107);
             this.btnListDelete.TabIndex = 85;
+            this.btnListDelete.Text = "Verwijder";
             this.btnListDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnListDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnListDelete.UseVisualStyleBackColor = false;
             this.btnListDelete.Click += new System.EventHandler(this.btnListDelete_Click);
             this.btnListDelete.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.btnListDelete_HelpRequested);

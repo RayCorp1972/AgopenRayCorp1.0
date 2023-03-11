@@ -49,6 +49,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblToolWidthHalf = new System.Windows.Forms.Label();
             this.lblTramWidth = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudPasses)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,11 +60,11 @@
             this.lblSmallSnapRight.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblSmallSnapRight.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSmallSnapRight.ForeColor = System.Drawing.Color.Black;
-            this.lblSmallSnapRight.Location = new System.Drawing.Point(102, 182);
+            this.lblSmallSnapRight.Location = new System.Drawing.Point(82, 183);
             this.lblSmallSnapRight.Name = "lblSmallSnapRight";
-            this.lblSmallSnapRight.Size = new System.Drawing.Size(47, 19);
+            this.lblSmallSnapRight.Size = new System.Drawing.Size(71, 19);
             this.lblSmallSnapRight.TabIndex = 424;
-            this.lblSmallSnapRight.Text = "Tram";
+            this.lblSmallSnapRight.Text = "Spuitpad";
             this.lblSmallSnapRight.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // nudPasses
@@ -97,9 +99,9 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(103, 242);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 48);
+            this.label3.Size = new System.Drawing.Size(136, 48);
             this.label3.TabIndex = 435;
-            this.label3.Text = "Passes";
+            this.label3.Text = "Werkgangen";
             this.label3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // label2
@@ -311,11 +313,11 @@
             this.label6.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(101, 212);
+            this.label6.Location = new System.Drawing.Point(87, 212);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 19);
+            this.label6.Size = new System.Drawing.Size(66, 19);
             this.label6.TabIndex = 464;
-            this.label6.Text = "Track";
+            this.label6.Text = "SpoorBr";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblToolWidthHalf
@@ -325,9 +327,9 @@
             this.lblToolWidthHalf.ForeColor = System.Drawing.Color.Black;
             this.lblToolWidthHalf.Location = new System.Drawing.Point(110, 15);
             this.lblToolWidthHalf.Name = "lblToolWidthHalf";
-            this.lblToolWidthHalf.Size = new System.Drawing.Size(105, 32);
+            this.lblToolWidthHalf.Size = new System.Drawing.Size(117, 32);
             this.lblToolWidthHalf.TabIndex = 463;
-            this.lblToolWidthHalf.Text = "Tool";
+            this.lblToolWidthHalf.Text = "Werktuig";
             this.lblToolWidthHalf.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTramWidth
@@ -343,12 +345,40 @@
             this.lblTramWidth.Text = "10 cm";
             this.lblTramWidth.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(255, 369);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 19);
+            this.label1.TabIndex = 466;
+            this.label1.Text = "Opslaan";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(12, 358);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 19);
+            this.label4.TabIndex = 467;
+            this.label4.Text = "Sluiten";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // FormTram
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(330, 451);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.nudPasses);
             this.Controls.Add(this.btnTriggerDistanceDn);
             this.Controls.Add(this.label2);
@@ -403,5 +433,7 @@
         private System.Windows.Forms.Label lblToolWidthHalf;
         private System.Windows.Forms.Label lblTrack;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
     }
 }

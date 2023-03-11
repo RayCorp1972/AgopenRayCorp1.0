@@ -824,6 +824,9 @@
     <Content Include="AOG.ico" />
     <Content Include="aChangeLog.txt" />
     <Content Include="btnImages\Images\z_NoGPS.png" />
+    <None Include="Resources\1216094.jpg" />
+    <None Include="Resources\9245.jpg_wh860.jpg" />
+    <None Include="Resources\logo.png" />
     <None Include="Resources\JobActive.png" />
     <None Include="Resources\Image1.bmp" />
     <None Include="btnImages\Splash.gif" />

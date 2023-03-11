@@ -61,11 +61,11 @@
             // 
             this.lblHalfSnapFtM.AutoSize = true;
             this.lblHalfSnapFtM.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHalfSnapFtM.Location = new System.Drawing.Point(106, 19);
+            this.lblHalfSnapFtM.Location = new System.Drawing.Point(91, 22);
             this.lblHalfSnapFtM.Name = "lblHalfSnapFtM";
-            this.lblHalfSnapFtM.Size = new System.Drawing.Size(38, 19);
+            this.lblHalfSnapFtM.Size = new System.Drawing.Size(65, 19);
             this.lblHalfSnapFtM.TabIndex = 452;
-            this.lblHalfSnapFtM.Text = "(m)";
+            this.lblHalfSnapFtM.Text = "Meters";
             this.lblHalfSnapFtM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblHalfWidth
@@ -131,14 +131,16 @@
             this.btnContourPriority.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
             this.btnContourPriority.FlatAppearance.BorderSize = 0;
             this.btnContourPriority.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnContourPriority.Font = new System.Drawing.Font("Tahoma", 14.25F);
+            this.btnContourPriority.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContourPriority.Image = global::AgOpenGPS.Properties.Resources.SnapToPivot;
             this.btnContourPriority.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnContourPriority.Location = new System.Drawing.Point(149, 184);
+            this.btnContourPriority.Location = new System.Drawing.Point(134, 164);
             this.btnContourPriority.Name = "btnContourPriority";
-            this.btnContourPriority.Size = new System.Drawing.Size(76, 67);
+            this.btnContourPriority.Size = new System.Drawing.Size(106, 134);
             this.btnContourPriority.TabIndex = 3;
+            this.btnContourPriority.Text = "Naar hier";
             this.btnContourPriority.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnContourPriority.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnContourPriority.UseVisualStyleBackColor = false;
             this.btnContourPriority.Click += new System.EventHandler(this.btnContourPriority_Click);
             this.btnContourPriority.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.btnContourPriority_HelpRequested);
@@ -149,10 +151,12 @@
             this.btnSwapAB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSwapAB.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSwapAB.Image = global::AgOpenGPS.Properties.Resources.ABSwapPoints;
-            this.btnSwapAB.Location = new System.Drawing.Point(28, 184);
+            this.btnSwapAB.Location = new System.Drawing.Point(3, 176);
             this.btnSwapAB.Name = "btnSwapAB";
-            this.btnSwapAB.Size = new System.Drawing.Size(76, 67);
+            this.btnSwapAB.Size = new System.Drawing.Size(105, 105);
             this.btnSwapAB.TabIndex = 5;
+            this.btnSwapAB.Text = "Omkeren";
+            this.btnSwapAB.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSwapAB.UseVisualStyleBackColor = true;
             this.btnSwapAB.Click += new System.EventHandler(this.btnSwapAB_Click);
             // 
@@ -231,7 +235,7 @@
             // 
             this.tboxHeading.BackColor = System.Drawing.Color.AliceBlue;
             this.tboxHeading.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxHeading.Location = new System.Drawing.Point(105, 280);
+            this.tboxHeading.Location = new System.Drawing.Point(100, 304);
             this.tboxHeading.MaxLength = 10;
             this.tboxHeading.Name = "tboxHeading";
             this.tboxHeading.Size = new System.Drawing.Size(140, 36);
@@ -253,7 +257,7 @@
             "90",
             "180",
             "270"});
-            this.cboxDegrees.Location = new System.Drawing.Point(8, 281);
+            this.cboxDegrees.Location = new System.Drawing.Point(8, 304);
             this.cboxDegrees.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cboxDegrees.Name = "cboxDegrees";
             this.cboxDegrees.Size = new System.Drawing.Size(78, 37);

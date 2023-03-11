@@ -80,7 +80,7 @@
             this.bntOK.Name = "bntOK";
             this.bntOK.Size = new System.Drawing.Size(93, 93);
             this.bntOK.TabIndex = 197;
-            this.bntOK.Text = "For Now";
+            this.bntOK.Text = "Tijdelijk";
             this.bntOK.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.bntOK.UseVisualStyleBackColor = true;
             this.bntOK.Click += new System.EventHandler(this.bntOK_Click);
@@ -116,7 +116,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(93, 93);
             this.btnSave.TabIndex = 199;
-            this.btnSave.Text = "To File";
+            this.btnSave.Text = "Opslaan";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
