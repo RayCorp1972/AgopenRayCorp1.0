@@ -31,6 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblHalfSnapFtM = new System.Windows.Forms.Label();
             this.lblHalfWidth = new System.Windows.Forms.Label();
+            this.tboxHeading = new System.Windows.Forms.TextBox();
+            this.cboxDegrees = new System.Windows.Forms.ComboBox();
+            this.nudMinTurnRadius = new System.Windows.Forms.NumericUpDown();
             this.btnNoSave = new System.Windows.Forms.Button();
             this.btnLeftHalfWidth = new System.Windows.Forms.Button();
             this.btnRightHalfWidth = new System.Windows.Forms.Button();
@@ -40,9 +43,6 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.btnAdjLeft = new System.Windows.Forms.Button();
             this.btnAdjRight = new System.Windows.Forms.Button();
-            this.tboxHeading = new System.Windows.Forms.TextBox();
-            this.cboxDegrees = new System.Windows.Forms.ComboBox();
-            this.nudMinTurnRadius = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinTurnRadius)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +61,7 @@
             // 
             this.lblHalfSnapFtM.AutoSize = true;
             this.lblHalfSnapFtM.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHalfSnapFtM.Location = new System.Drawing.Point(91, 22);
+            this.lblHalfSnapFtM.Location = new System.Drawing.Point(96, 22);
             this.lblHalfSnapFtM.Name = "lblHalfSnapFtM";
             this.lblHalfSnapFtM.Size = new System.Drawing.Size(65, 19);
             this.lblHalfSnapFtM.TabIndex = 452;
@@ -77,6 +77,65 @@
             this.lblHalfWidth.TabIndex = 451;
             this.lblHalfWidth.Text = "3.88";
             this.lblHalfWidth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tboxHeading
+            // 
+            this.tboxHeading.BackColor = System.Drawing.Color.AliceBlue;
+            this.tboxHeading.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxHeading.Location = new System.Drawing.Point(100, 304);
+            this.tboxHeading.MaxLength = 10;
+            this.tboxHeading.Name = "tboxHeading";
+            this.tboxHeading.Size = new System.Drawing.Size(140, 36);
+            this.tboxHeading.TabIndex = 453;
+            this.tboxHeading.Text = "359.123456";
+            this.tboxHeading.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tboxHeading.Click += new System.EventHandler(this.tboxHeading_Click);
+            // 
+            // cboxDegrees
+            // 
+            this.cboxDegrees.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboxDegrees.BackColor = System.Drawing.Color.Lavender;
+            this.cboxDegrees.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxDegrees.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cboxDegrees.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxDegrees.FormattingEnabled = true;
+            this.cboxDegrees.Items.AddRange(new object[] {
+            "0",
+            "90",
+            "180",
+            "270"});
+            this.cboxDegrees.Location = new System.Drawing.Point(8, 304);
+            this.cboxDegrees.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cboxDegrees.Name = "cboxDegrees";
+            this.cboxDegrees.Size = new System.Drawing.Size(78, 37);
+            this.cboxDegrees.TabIndex = 454;
+            this.cboxDegrees.SelectedIndexChanged += new System.EventHandler(this.cboxDegrees_SelectedIndexChanged);
+            // 
+            // nudMinTurnRadius
+            // 
+            this.nudMinTurnRadius.BackColor = System.Drawing.Color.AliceBlue;
+            this.nudMinTurnRadius.DecimalPlaces = 1;
+            this.nudMinTurnRadius.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudMinTurnRadius.InterceptArrowKeys = false;
+            this.nudMinTurnRadius.Location = new System.Drawing.Point(81, 117);
+            this.nudMinTurnRadius.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.nudMinTurnRadius.Name = "nudMinTurnRadius";
+            this.nudMinTurnRadius.ReadOnly = true;
+            this.nudMinTurnRadius.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.nudMinTurnRadius.Size = new System.Drawing.Size(88, 33);
+            this.nudMinTurnRadius.TabIndex = 411;
+            this.nudMinTurnRadius.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudMinTurnRadius.Value = new decimal(new int[] {
+            888,
+            0,
+            0,
+            0});
+            this.nudMinTurnRadius.ValueChanged += new System.EventHandler(this.nudMinTurnRadius_ValueChanged);
+            this.nudMinTurnRadius.Click += new System.EventHandler(this.nudMinTurnRadius_Click);
             // 
             // btnNoSave
             // 
@@ -230,65 +289,6 @@
             this.btnAdjRight.TabIndex = 7;
             this.btnAdjRight.UseVisualStyleBackColor = false;
             this.btnAdjRight.Click += new System.EventHandler(this.btnAdjRight_Click);
-            // 
-            // tboxHeading
-            // 
-            this.tboxHeading.BackColor = System.Drawing.Color.AliceBlue;
-            this.tboxHeading.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxHeading.Location = new System.Drawing.Point(100, 304);
-            this.tboxHeading.MaxLength = 10;
-            this.tboxHeading.Name = "tboxHeading";
-            this.tboxHeading.Size = new System.Drawing.Size(140, 36);
-            this.tboxHeading.TabIndex = 453;
-            this.tboxHeading.Text = "359.123456";
-            this.tboxHeading.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tboxHeading.Click += new System.EventHandler(this.tboxHeading_Click);
-            // 
-            // cboxDegrees
-            // 
-            this.cboxDegrees.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cboxDegrees.BackColor = System.Drawing.Color.Lavender;
-            this.cboxDegrees.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxDegrees.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cboxDegrees.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxDegrees.FormattingEnabled = true;
-            this.cboxDegrees.Items.AddRange(new object[] {
-            "0",
-            "90",
-            "180",
-            "270"});
-            this.cboxDegrees.Location = new System.Drawing.Point(8, 304);
-            this.cboxDegrees.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.cboxDegrees.Name = "cboxDegrees";
-            this.cboxDegrees.Size = new System.Drawing.Size(78, 37);
-            this.cboxDegrees.TabIndex = 454;
-            this.cboxDegrees.SelectedIndexChanged += new System.EventHandler(this.cboxDegrees_SelectedIndexChanged);
-            // 
-            // nudMinTurnRadius
-            // 
-            this.nudMinTurnRadius.BackColor = System.Drawing.Color.AliceBlue;
-            this.nudMinTurnRadius.DecimalPlaces = 1;
-            this.nudMinTurnRadius.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudMinTurnRadius.InterceptArrowKeys = false;
-            this.nudMinTurnRadius.Location = new System.Drawing.Point(81, 117);
-            this.nudMinTurnRadius.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.nudMinTurnRadius.Name = "nudMinTurnRadius";
-            this.nudMinTurnRadius.ReadOnly = true;
-            this.nudMinTurnRadius.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.nudMinTurnRadius.Size = new System.Drawing.Size(88, 33);
-            this.nudMinTurnRadius.TabIndex = 411;
-            this.nudMinTurnRadius.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nudMinTurnRadius.Value = new decimal(new int[] {
-            888,
-            0,
-            0,
-            0});
-            this.nudMinTurnRadius.ValueChanged += new System.EventHandler(this.nudMinTurnRadius_ValueChanged);
-            this.nudMinTurnRadius.Click += new System.EventHandler(this.nudMinTurnRadius_Click);
             // 
             // FormEditAB
             // 

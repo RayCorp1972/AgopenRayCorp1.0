@@ -183,6 +183,26 @@ namespace AgOpenGPS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AgIO1 {
+            get {
+                object obj = ResourceManager.GetObject("AgIO1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AgIOOld {
+            get {
+                object obj = ResourceManager.GetObject("AgIOOld", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AgOpenYouTubeChannel {
             get {
                 object obj = ResourceManager.GetObject("AgOpenYouTubeChannel", resourceCulture);
@@ -1820,9 +1840,9 @@ namespace AgOpenGPS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap JobActive {
+        internal static System.Drawing.Bitmap JobActiveOld {
             get {
-                object obj = ResourceManager.GetObject("JobActive", resourceCulture);
+                object obj = ResourceManager.GetObject("JobActiveOld", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
