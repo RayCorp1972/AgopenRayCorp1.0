@@ -258,6 +258,7 @@ namespace AgIO
             IPAddress casterIP = IPAddress.Parse(tboxCasterIP.Text.Trim()); //Select correct Address
             int casterPort = (int)nudCasterPort.Value; //Select correct port (usually 80)
 
+            Socket TT;
             Socket sckt;
             dataList?.Clear();
 
@@ -424,6 +425,72 @@ namespace AgIO
         {
             ntripStatusChanged = true;
             if (cboxToUDP.Checked) cboxToUDP.Checked = false;
+        }
+          // aanpassen track trace
+        private void button1_Click(object sender, EventArgs e)
+        {
+            IPAddress address = IPAddress.Parse(txtBoxServerIP.Text.Trim()); //Select correct Address
+                                                                             //int casterPort = (int)txtServerPort.Text; //Select correct port (usually 80)
+
+
+           label22.Text = DateTime.Now.ToString("hh:mm:ss tt");
+
+            Socket TT;
+            
+           
+
+            try
+            {
+                TT = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp)
+                {
+                    Blocking = true
+                };
+                TT.Connect(new IPEndPoint(address, 5055));
+
+                string msg = "POST " + "/?id=12345" + label22.Text + "&lat=" + (decimal)mf.latitude + "&lon=" + (decimal)mf.longitude + "/ HTTP / 1.0\r\n";
+
+
+                //string msg = "GET / HTTP/1.0\r\n" + "User-Agent: NTRIP iter.dk\r\n" +
+                //"Accept: */*\r\nConnection: close\r\n" + "\r\n";
+                textBox1.Text = msg;
+                //Send request
+                byte[] data = System.Text.Encoding.ASCII.GetBytes(msg);
+                TT.Send(data);
+                int bytes = 0;
+                byte[] bytesReceived = new byte[1024];
+                string page = String.Empty;
+                Thread.Sleep(200);
+
+                do
+                {
+                    bytes = TT.Receive(bytesReceived, bytesReceived.Length, SocketFlags.None);
+                    page += Encoding.ASCII.GetString(bytesReceived, 0, bytes);
+                }
+                while (bytes > 0);
+
+                if (page.Length > 0)
+                {
+                    string[] words = page.Split(new string[] { System.Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+
+                    for (int i = 0; i < words.Length; i++)
+                    {
+                        string[] words2 = words[i].Split(';');
+
+                        if (words2[0] == "STR")
+                        {
+                            dataList.Add(words2[1].Trim().ToString() + "," + words2[9].ToString() + "," + words2[10].ToString()
+                          + "," + words2[3].Trim().ToString() + "," + words2[6].Trim().ToString()
+                                );
+                        }
+                    }
+                }
+            }
+
+            catch (SocketException)
+            {
+                mf.TimedMessageBox(2000, "Socket Exception", "Invalid IP:Port");
+                return;
+            }
         }
     }
 }
