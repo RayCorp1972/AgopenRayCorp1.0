@@ -883,7 +883,7 @@ namespace AgOpenGPS
             if (result3 == DialogResult.Yes)
             {
                 
-                DialogResult result4 = MessageBox.Show("U gaat nu het systeem geheel wilt afsluiten!!",
+                DialogResult result4 = MessageBox.Show("U gaat nu het systeem geheel afsluiten!!",
                    "2de waarschuwing??",
                    MessageBoxButtons.YesNo,
                    MessageBoxIcon.Question,

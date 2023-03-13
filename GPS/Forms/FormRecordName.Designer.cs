@@ -92,9 +92,9 @@ namespace AgOpenGPS.Forms
             this.label1.Location = new System.Drawing.Point(20, 33);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 23);
+            this.label1.Size = new System.Drawing.Size(194, 23);
             this.label1.TabIndex = 152;
-            this.label1.Text = "Enter Record Name";
+            this.label1.Text = "Vul Opname naam in:";
             // 
             // tboxFieldName
             // 

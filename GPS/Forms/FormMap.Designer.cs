@@ -100,11 +100,11 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(561, 121);
+            this.label2.Location = new System.Drawing.Point(539, 121);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 23);
+            this.label2.Size = new System.Drawing.Size(76, 23);
             this.label2.TabIndex = 475;
-            this.label2.Text = "Points:";
+            this.label2.Text = "Punten:";
             // 
             // lblPoints
             // 
@@ -333,7 +333,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(767, 520);
+            this.ClientSize = new System.Drawing.Size(767, 543);
             this.ControlBox = false;
             this.Controls.Add(this.btnZoomOut);
             this.Controls.Add(this.btnZoomIn);

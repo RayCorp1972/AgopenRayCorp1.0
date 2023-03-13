@@ -389,24 +389,24 @@
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label27.Location = new System.Drawing.Point(14, 65);
+            this.label27.Location = new System.Drawing.Point(-3, 65);
             this.label27.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(49, 18);
+            this.label27.Size = new System.Drawing.Size(70, 18);
             this.label27.TabIndex = 475;
-            this.label27.Text = "Field E";
+            this.label27.Text = "Perceel O";
             // 
             // label28
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label28.Location = new System.Drawing.Point(12, 47);
+            this.label28.Location = new System.Drawing.Point(-3, 47);
             this.label28.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(51, 18);
+            this.label28.Size = new System.Drawing.Size(69, 18);
             this.label28.TabIndex = 474;
-            this.label28.Text = "Field N";
+            this.label28.Text = "Perceel N";
             // 
             // lblHz
             // 
@@ -504,12 +504,12 @@
             // 
             this.lblVersion.AutoSize = true;
             this.lblVersion.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVersion.Location = new System.Drawing.Point(308, 146);
+            this.lblVersion.Location = new System.Drawing.Point(282, 146);
             this.lblVersion.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(112, 18);
+            this.lblVersion.Size = new System.Drawing.Size(156, 18);
             this.lblVersion.TabIndex = 514;
-            this.lblVersion.Text = "RayCorp2023";
+            this.lblVersion.Text = "RayCorp2023 1.0.1";
             this.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label13
@@ -517,7 +517,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label13.Location = new System.Drawing.Point(252, 146);
+            this.label13.Location = new System.Drawing.Point(226, 146);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(47, 18);
             this.label13.TabIndex = 515;

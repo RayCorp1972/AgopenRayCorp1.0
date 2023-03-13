@@ -207,9 +207,9 @@
             this.button4.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Image = global::AgOpenGPS.Properties.Resources.Settings48;
             this.button4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button4.Location = new System.Drawing.Point(862, 481);
+            this.button4.Location = new System.Drawing.Point(862, 468);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(110, 62);
+            this.button4.Size = new System.Drawing.Size(110, 75);
             this.button4.TabIndex = 126;
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button4.UseVisualStyleBackColor = false;

@@ -55,9 +55,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(134, 88);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 23);
+            this.label1.Size = new System.Drawing.Size(76, 23);
             this.label1.TabIndex = 141;
-            this.label1.Text = "Area:";
+            this.label1.Text = "Gebied:";
             // 
             // timer1
             // 
@@ -99,9 +99,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(272, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 23);
+            this.label2.Size = new System.Drawing.Size(76, 23);
             this.label2.TabIndex = 148;
-            this.label2.Text = "Points:";
+            this.label2.Text = "Punten:";
             // 
             // btnRestart
             // 

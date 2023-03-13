@@ -150,9 +150,9 @@
             this.lblEasting.Location = new System.Drawing.Point(130, 196);
             this.lblEasting.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblEasting.Name = "lblEasting";
-            this.lblEasting.Size = new System.Drawing.Size(60, 19);
+            this.lblEasting.Size = new System.Drawing.Size(59, 19);
             this.lblEasting.TabIndex = 208;
-            this.lblEasting.Text = "Easting";
+            this.lblEasting.Text = "Oosten";
             // 
             // lblNorthing
             // 
@@ -163,9 +163,9 @@
             this.lblNorthing.Location = new System.Drawing.Point(29, 196);
             this.lblNorthing.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblNorthing.Name = "lblNorthing";
-            this.lblNorthing.Size = new System.Drawing.Size(71, 19);
+            this.lblNorthing.Size = new System.Drawing.Size(70, 19);
             this.lblNorthing.TabIndex = 207;
-            this.lblNorthing.Text = "Northing";
+            this.lblNorthing.Text = "Noorden";
             // 
             // label5
             // 

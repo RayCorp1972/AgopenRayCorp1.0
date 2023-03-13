@@ -838,6 +838,9 @@
     <Content Include="AOG.ico" />
     <Content Include="aChangeLog.txt" />
     <Content Include="btnImages\Images\z_NoGPS.png" />
+    <None Include="Resources\AgIO3.png" />
+    <None Include="Resources\AgIO2.png" />
+    <None Include="Resources\JobActive1.png" />
     <None Include="Resources\AgIO1.png" />
     <None Include="Resources\AgIO.png" />
     <None Include="Resources\JobActive.png" />
