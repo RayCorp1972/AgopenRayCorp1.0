@@ -78,6 +78,9 @@ namespace AgIO
         //First run
         private void FormLoop_Load(object sender, EventArgs e)
         {
+
+
+           
             if (Settings.Default.setF_workingDirectory == "Default")
                 baseDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\AgOpenGPS\\";
             else baseDirectory = Settings.Default.setF_workingDirectory + "\\AgOpenGPS\\";
@@ -112,6 +115,7 @@ namespace AgIO
 
                 btnUDP.BackColor = Color.Gainsboro;
                 lblIP.Text = "Off";
+
             }
 
             //small view
@@ -329,6 +333,7 @@ namespace AgIO
                 lblCurrentLat.Text = latitude.ToString("N7");
             }
 
+           
             //do all the NTRIP routines
             DoNTRIPSecondRoutine();
 
@@ -372,6 +377,7 @@ namespace AgIO
             {
                 TwoSecondLoop();
                 twoSecondTimer = secondsSinceStart;
+               
             }
 
             //every 10 seconds
@@ -433,7 +439,7 @@ namespace AgIO
                         //add the uniques messages to all the new ones
                         foreach (var item in aList)
                         {
-                                rList.Add(item);
+                            rList.Add(item);
                         }
 
                         //sort and group using Linq
@@ -448,7 +454,7 @@ namespace AgIO
                         foreach (var grp in g)
                         {
                             aList.Add(grp.Key);
-                            sbRTCM.AppendLine(grp.Key + " - " + (grp.Count()-1));
+                            sbRTCM.AppendLine(grp.Key + " - " + (grp.Count() - 1));
                             count++;
                         }
 
@@ -515,9 +521,14 @@ namespace AgIO
                 }
 
                 #endregion
+
+               
+               
+
+
+
             }
         }
-
         private void btnSlide_Click(object sender, EventArgs e)
         {
             if (this.Width < 600)
@@ -684,6 +695,9 @@ namespace AgIO
 
                 lblCurentLon.Text = longitude.ToString("N7");
                 lblCurrentLat.Text = latitude.ToString("N7");
+
+               
+
             }
         }
 

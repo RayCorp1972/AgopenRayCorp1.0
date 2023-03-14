@@ -5,6 +5,16 @@ using System;
 using System.Globalization;
 using System.Windows.Forms;
 
+
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO.Ports;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading;
+
+
 namespace AgOpenGPS
 {
     public partial class FormGPSData : Form
@@ -64,6 +74,28 @@ namespace AgOpenGPS
         private void FormGPSData_FormClosing(object sender, FormClosingEventArgs e)
         {
             mf.isGPSSentencesOn = false;
+        }
+
+        public void TrackandTrace()
+        {
+            string date = DateTime.Now.ToString("yyyy/MM/dd");
+            string Time = DateTime.Now.ToString("HH:mm:ss");
+            string lat = mf.Latitude;
+        string lon = mf.Longitude;
+
+            var request = (HttpWebRequest)WebRequest.Create("http://gps.raycorp.nl:5055/" + "?id=12345&timestamp=" + date + "T" + Time + "Z" + "&" + lat + "&" + lon);
+            var postData = "";
+            var data = Encoding.ASCII.GetBytes(postData);
+
+            request.Method = "POST";
+            request.ContentType = "application/json";
+            request.ContentLength = data.Length;
+
+            using (var stream = request.GetRequestStream())
+            {
+                stream.Write(data, 0, data.Length);
+            }
+            request.ServicePoint.Expect100Continue = false;
         }
     }
 }

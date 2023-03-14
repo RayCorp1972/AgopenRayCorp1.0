@@ -80,16 +80,17 @@
             this.comboboxPacketSize = new System.Windows.Forms.ComboBox();
             this.labelRtcmPort = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtServerPort = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.txtBoxServerIP = new System.Windows.Forms.TextBox();
             this.cboxIsNTRIPOn = new System.Windows.Forms.CheckBox();
             this.btnSerialCancel = new System.Windows.Forms.Button();
             this.btnSerialOK = new System.Windows.Forms.Button();
-            this.txtServerPort = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nudCasterPort)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSendToUDPPort)).BeginInit();
@@ -780,6 +781,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.textBox2);
             this.tabPage4.Controls.Add(this.textBox1);
             this.tabPage4.Controls.Add(this.label22);
             this.tabPage4.Controls.Add(this.label21);
@@ -794,6 +796,45 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Track&Trace";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(15, 396);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(307, 40);
+            this.textBox2.TabIndex = 7;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(15, 337);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(307, 40);
+            this.textBox1.TabIndex = 6;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(417, 217);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(100, 33);
+            this.label22.TabIndex = 5;
+            this.label22.Text = "label22";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(9, 93);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(79, 33);
+            this.label21.TabIndex = 4;
+            this.label21.Text = "Poort";
+            // 
+            // txtServerPort
+            // 
+            this.txtServerPort.Location = new System.Drawing.Point(15, 129);
+            this.txtServerPort.Name = "txtServerPort";
+            this.txtServerPort.Size = new System.Drawing.Size(240, 40);
+            this.txtServerPort.TabIndex = 3;
             // 
             // button1
             // 
@@ -829,7 +870,7 @@
             this.cboxIsNTRIPOn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.cboxIsNTRIPOn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboxIsNTRIPOn.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxIsNTRIPOn.Location = new System.Drawing.Point(342, 588);
+            this.cboxIsNTRIPOn.Location = new System.Drawing.Point(30, 581);
             this.cboxIsNTRIPOn.Name = "cboxIsNTRIPOn";
             this.cboxIsNTRIPOn.Size = new System.Drawing.Size(150, 50);
             this.cboxIsNTRIPOn.TabIndex = 92;
@@ -847,7 +888,7 @@
             this.btnSerialCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSerialCancel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSerialCancel.Image = global::AgIO.Properties.Resources.Cancel64;
-            this.btnSerialCancel.Location = new System.Drawing.Point(529, 581);
+            this.btnSerialCancel.Location = new System.Drawing.Point(502, 581);
             this.btnSerialCancel.Name = "btnSerialCancel";
             this.btnSerialCancel.Size = new System.Drawing.Size(105, 64);
             this.btnSerialCancel.TabIndex = 95;
@@ -863,7 +904,7 @@
             this.btnSerialOK.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSerialOK.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnSerialOK.Image = global::AgIO.Properties.Resources.OK64;
-            this.btnSerialOK.Location = new System.Drawing.Point(650, 581);
+            this.btnSerialOK.Location = new System.Drawing.Point(632, 581);
             this.btnSerialOK.Name = "btnSerialOK";
             this.btnSerialOK.Size = new System.Drawing.Size(105, 64);
             this.btnSerialOK.TabIndex = 94;
@@ -871,44 +912,18 @@
             this.btnSerialOK.UseVisualStyleBackColor = true;
             this.btnSerialOK.Click += new System.EventHandler(this.btnSerialOK_Click);
             // 
-            // txtServerPort
+            // timer2
             // 
-            this.txtServerPort.Location = new System.Drawing.Point(15, 129);
-            this.txtServerPort.Name = "txtServerPort";
-            this.txtServerPort.Size = new System.Drawing.Size(240, 40);
-            this.txtServerPort.TabIndex = 3;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(9, 93);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(79, 33);
-            this.label21.TabIndex = 4;
-            this.label21.Text = "Poort";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(417, 217);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(100, 33);
-            this.label22.TabIndex = 5;
-            this.label22.Text = "label22";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(27, 419);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(686, 40);
-            this.textBox1.TabIndex = 6;
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // FormNtrip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(767, 648);
+            this.ClientSize = new System.Drawing.Size(742, 695);
             this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.cboxIsNTRIPOn);
@@ -1003,5 +1018,6 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

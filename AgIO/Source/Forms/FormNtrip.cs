@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
+
+
+
+
 namespace AgIO
 {
     public partial class FormNtrip : Form
@@ -91,11 +95,15 @@ namespace AgIO
             else cboxHTTP.Text = "1.1";
 
             comboboxPacketSize.Text = mf.packetSizeNTRIP.ToString();
+
+            
+
         }
 
         private void cboxIsNTRIPOn_Click(object sender, EventArgs e)
         {
             ntripStatusChanged = true;
+            
         }
 
         //get the ipv4 address only
@@ -249,6 +257,7 @@ namespace AgIO
         {
             tboxCurrentLat.Text = mf.latitude.ToString();
             tboxCurrentLon.Text = mf.longitude.ToString();
+
         }
 
         private readonly List<string> dataList = new List<string>();
@@ -258,10 +267,10 @@ namespace AgIO
             IPAddress casterIP = IPAddress.Parse(tboxCasterIP.Text.Trim()); //Select correct Address
             int casterPort = (int)nudCasterPort.Value; //Select correct port (usually 80)
 
-            Socket TT;
+            //Socket TT;
             Socket sckt;
             dataList?.Clear();
-
+            
             try
             {
                 sckt = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp)
@@ -426,71 +435,34 @@ namespace AgIO
             ntripStatusChanged = true;
             if (cboxToUDP.Checked) cboxToUDP.Checked = false;
         }
-          // aanpassen track trace
+       
+        
+        // Track and Trace
         private void button1_Click(object sender, EventArgs e)
         {
-            IPAddress address = IPAddress.Parse(txtBoxServerIP.Text.Trim()); //Select correct Address
-                                                                             //int casterPort = (int)txtServerPort.Text; //Select correct port (usually 80)
-
-
-           label22.Text = DateTime.Now.ToString("hh:mm:ss tt");
-
-            Socket TT;
+            string date = DateTime.Now.ToString("yyyy/MM/dd");
+            string Time = DateTime.Now.ToString("HH:mm:ss");
+            string lat = mf.latitude.ToString();
+            string lon = mf.longitude.ToString();
             
+            var request = (HttpWebRequest)WebRequest.Create("http://gps.raycorp.nl:5055/" + "?id=12345&timestamp=" + date + "T" + Time + "Z" + "&" + lat + "&" + lon);
+            var postData = "";        
+            var data = Encoding.ASCII.GetBytes(postData);
+
+            request.Method = "POST";
+            request.ContentType = "application/json";
+            request.ContentLength = data.Length;
+
+            using (var stream = request.GetRequestStream())
+            {
+                stream.Write(data, 0, data.Length);
+            }
+            request.ServicePoint.Expect100Continue = false;
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
            
-
-            try
-            {
-                TT = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp)
-                {
-                    Blocking = true
-                };
-                TT.Connect(new IPEndPoint(address, 5055));
-
-                string msg = "POST " + "/?id=12345" + label22.Text + "&lat=" + (decimal)mf.latitude + "&lon=" + (decimal)mf.longitude + "/ HTTP / 1.0\r\n";
-
-
-                //string msg = "GET / HTTP/1.0\r\n" + "User-Agent: NTRIP iter.dk\r\n" +
-                //"Accept: */*\r\nConnection: close\r\n" + "\r\n";
-                textBox1.Text = msg;
-                //Send request
-                byte[] data = System.Text.Encoding.ASCII.GetBytes(msg);
-                TT.Send(data);
-                int bytes = 0;
-                byte[] bytesReceived = new byte[1024];
-                string page = String.Empty;
-                Thread.Sleep(200);
-
-                do
-                {
-                    bytes = TT.Receive(bytesReceived, bytesReceived.Length, SocketFlags.None);
-                    page += Encoding.ASCII.GetString(bytesReceived, 0, bytes);
-                }
-                while (bytes > 0);
-
-                if (page.Length > 0)
-                {
-                    string[] words = page.Split(new string[] { System.Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
-
-                    for (int i = 0; i < words.Length; i++)
-                    {
-                        string[] words2 = words[i].Split(';');
-
-                        if (words2[0] == "STR")
-                        {
-                            dataList.Add(words2[1].Trim().ToString() + "," + words2[9].ToString() + "," + words2[10].ToString()
-                          + "," + words2[3].Trim().ToString() + "," + words2[6].Trim().ToString()
-                                );
-                        }
-                    }
-                }
-            }
-
-            catch (SocketException)
-            {
-                mf.TimedMessageBox(2000, "Socket Exception", "Invalid IP:Port");
-                return;
-            }
         }
     }
 }
