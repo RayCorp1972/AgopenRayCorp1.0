@@ -119,7 +119,7 @@ namespace AgIO
             }
 
             //small view
-            this.Width = 428;
+            this.Width = 410;
 
             LoadLoopback();
 
@@ -317,6 +317,7 @@ namespace AgIO
                 oneSecondLoopTimer.Interval = 1000;
                 this.Width = 428;
                 this.Height = 500;
+                
                 return;
             }
 
@@ -385,6 +386,8 @@ namespace AgIO
             {
                 TenSecondLoop();
                 tenSecondTimer = secondsSinceStart;
+                timerTT.Enabled = true;
+
             }
 
             //3 minute egg timer
@@ -392,6 +395,7 @@ namespace AgIO
             {
                 ThreeMinuteLoop();
                 threeMinuteTimer = secondsSinceStart;
+                
             }
 
             // 1 Second Loop Part2 
@@ -469,6 +473,7 @@ namespace AgIO
                         }
 
                         lblMessagesFound.Text = count.ToString();
+                        timerTT.Enabled = true;
                     }
 
                     catch
@@ -476,6 +481,7 @@ namespace AgIO
                         sbRTCM.Clear();
                         sbRTCM.Append("Error");
                     }
+                    
                 }
 
                 #region Serial update
@@ -563,6 +569,7 @@ namespace AgIO
             if (isViewAdvanced)
             {
                 btnSlide.PerformClick();
+                
             }
         }
 
@@ -833,6 +840,34 @@ namespace AgIO
                 }
             }
         }
+
+        private void timerTT_Tick(object sender, EventArgs e)
+        {
+            if (timerTT.Interval > 1200)
+            {
+                string date = DateTime.Now.ToString("yyyy/MM/dd");
+                string Time = DateTime.Now.ToString("HH:mm:ss");
+                string lat = latitude.ToString();
+                string lon = longitude.ToString();
+
+                var request = (HttpWebRequest)WebRequest.Create("http://gps.raycorp.nl:5055/" + "?id=12345&timestamp=" + date + "T" + Time + "Z" + "&" + lat + "&" + lon);
+                var postData = "";
+                var data = Encoding.ASCII.GetBytes(postData);
+
+                request.Method = "POST";
+                request.ContentType = "application/json";
+                request.ContentLength = data.Length;
+
+                using (var stream = request.GetRequestStream())
+                {
+                    stream.Write(data, 0, data.Length);
+                }
+                timerTT.Interval = 1000;
+                return;
+            }
+        }
+
+      
 
         private void lblNTRIPBytes_Click(object sender, EventArgs e)
         {

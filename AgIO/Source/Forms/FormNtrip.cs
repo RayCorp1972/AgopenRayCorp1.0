@@ -97,6 +97,9 @@ namespace AgIO
             comboboxPacketSize.Text = mf.packetSizeNTRIP.ToString();
 
             
+            tabControl1.TabPages.Remove(tabPage3);
+            tabControl1.TabPages.Remove(tabPage2);
+
 
         }
 

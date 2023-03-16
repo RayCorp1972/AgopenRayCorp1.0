@@ -92,7 +92,7 @@
             this.cboxSerialPassOn.Name = "cboxSerialPassOn";
             this.cboxSerialPassOn.Size = new System.Drawing.Size(184, 50);
             this.cboxSerialPassOn.TabIndex = 163;
-            this.cboxSerialPassOn.Text = "Serial Pass On";
+            this.cboxSerialPassOn.Text = "Serial Aan ";
             this.cboxSerialPassOn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.cboxSerialPassOn.UseVisualStyleBackColor = false;
             this.cboxSerialPassOn.Click += new System.EventHandler(this.cboxSerialPassOn_Click);
@@ -200,7 +200,7 @@
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(337, 31);
             this.label23.TabIndex = 170;
-            this.label23.Text = "Send NTRIP To GPS Using:";
+            this.label23.Text = "Stuur NTRIP naar GPS Using:";
             this.label23.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // label21

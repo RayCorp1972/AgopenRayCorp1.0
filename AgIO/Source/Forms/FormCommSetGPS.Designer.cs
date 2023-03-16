@@ -284,7 +284,7 @@
             this.lblCurrentPort.Name = "lblCurrentPort";
             this.lblCurrentPort.Size = new System.Drawing.Size(121, 18);
             this.lblCurrentPort.TabIndex = 47;
-            this.lblCurrentPort.Text = "GPS Port";
+            this.lblCurrentPort.Text = "GPS Poort";
             this.lblCurrentPort.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2

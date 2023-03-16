@@ -58,9 +58,9 @@
             this.lblLast.Location = new System.Drawing.Point(15, 9);
             this.lblLast.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblLast.Name = "lblLast";
-            this.lblLast.Size = new System.Drawing.Size(269, 23);
+            this.lblLast.Size = new System.Drawing.Size(278, 23);
             this.lblLast.TabIndex = 213;
-            this.lblLast.Text = "Settings And Configuration";
+            this.lblLast.Text = "Instellingen en Configuratie";
             this.lblLast.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tboxName
@@ -96,9 +96,9 @@
             this.label1.Location = new System.Drawing.Point(82, 215);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 23);
+            this.label1.Size = new System.Drawing.Size(218, 23);
             this.label1.TabIndex = 216;
-            this.label1.Text = "Enter New Name:";
+            this.label1.Text = "Voer nieuwe naam in:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
@@ -108,9 +108,9 @@
             this.label2.Location = new System.Drawing.Point(82, 55);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(198, 23);
+            this.label2.Size = new System.Drawing.Size(262, 23);
             this.label2.TabIndex = 217;
-            this.label2.Text = "Overwrite This File:";
+            this.label2.Text = "Dit bestand overschrijven:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnSerialCancel
@@ -136,9 +136,9 @@
             this.label3.Location = new System.Drawing.Point(153, 151);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 23);
+            this.label3.Size = new System.Drawing.Size(50, 23);
             this.label3.TabIndex = 219;
-            this.label3.Text = "Or...";
+            this.label3.Text = "Of...";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FormCommSaver

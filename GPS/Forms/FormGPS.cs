@@ -364,7 +364,7 @@ namespace AgOpenGPS
         //Initialize items before the form Loads or is visible
         private void FormGPS_Load(object sender, EventArgs e)
        {
-          FormGPSData.Tra
+          
             
             this.MouseWheel += ZoomByMouseWheel;
 

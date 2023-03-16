@@ -28,7 +28,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -81,10 +81,16 @@
     <ManifestKeyFile>AgOpenGPS_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ColorPicker, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -796,6 +802,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -837,6 +844,8 @@
   <ItemGroup>
     <Content Include="AOG.ico" />
     <Content Include="aChangeLog.txt" />
+    <Content Include="btnImages\Images\Image1.png" />
+    <Content Include="btnImages\Images\z_Floor.png" />
     <Content Include="btnImages\Images\z_NoGPS.png" />
     <None Include="Resources\AgIO3.png" />
     <None Include="Resources\AgIO2.png" />
@@ -1063,7 +1072,6 @@
     <None Include="btnImages\YouSkipOff.png" />
     <None Include="btnImages\YouSkipOn.png" />
     <None Include="btnImages\Images\z_Compass.png" />
-    <None Include="btnImages\Images\z_Floor.png" />
     <None Include="btnImages\Images\z_Font.png" />
     <None Include="btnImages\Images\z_FrontWheels.png" />
     <None Include="btnImages\Images\z_Lift.png" />
