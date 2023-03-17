@@ -1193,7 +1193,7 @@ namespace AgIO
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(15, 202);
+            this.label15.Location = new System.Drawing.Point(211, 19);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(52, 18);
             this.label15.TabIndex = 515;
@@ -1206,7 +1206,6 @@ namespace AgIO
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(399, 446);
-            this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
@@ -1273,6 +1272,7 @@ namespace AgIO
             this.Controls.Add(this.lblCurentLon);
             this.Controls.Add(this.lblCurrentLat);
             this.Controls.Add(this.btnRelayTest);
+            this.Controls.Add(this.label15);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

@@ -741,5 +741,53 @@ namespace AgIO.Properties {
                 this["TrackEnabled"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TrackIP {
+            get {
+                return ((string)(this["TrackIP"]));
+            }
+            set {
+                this["TrackIP"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TrackPort {
+            get {
+                return ((string)(this["TrackPort"]));
+            }
+            set {
+                this["TrackPort"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TrackId {
+            get {
+                return ((string)(this["TrackId"]));
+            }
+            set {
+                this["TrackId"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool button1WasClicked {
+            get {
+                return ((bool)(this["button1WasClicked"]));
+            }
+            set {
+                this["button1WasClicked"] = value;
+            }
+        }
     }
 }

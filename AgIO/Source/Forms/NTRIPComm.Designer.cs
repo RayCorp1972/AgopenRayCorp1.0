@@ -116,13 +116,13 @@ namespace AgIO
                     {
                         if (isNTRIP_RequiredOn && NTRIP_Watchdog > 10)
                         {
-                            lblWatch.Text = "Wachten op verbinding";//gStr.gsWaiting;
+                            lblWatch.Text = "Verbinden";//gStr.gsWaiting;
                             pictureBox3.Visible = false;
                             pictureBox4.Visible = true;
                         }
                         else
                         {
-                            lblWatch.Text = "Ontvangen";//gStr.gsListening;
+                            lblWatch.Text = "Verbonden";//gStr.gsListening;
 
                             if (isNTRIP_RequiredOn)
                             {
@@ -137,7 +137,7 @@ namespace AgIO
 
                     if (sendGGAInterval > 0 && isNTRIP_Sending)
                     {
-                        lblWatch.Text = "Verstuur GGA";
+                        lblWatch.Text = "Verbonden";
                         isNTRIP_Sending = false;
                         pictureBox3.Visible = true;
                         pictureBox4.Visible = false;

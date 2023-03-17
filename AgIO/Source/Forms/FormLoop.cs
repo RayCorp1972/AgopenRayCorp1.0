@@ -66,6 +66,8 @@ namespace AgIO
         public int TrackTraceCounter = 0;
         //The base directory where Drive will be stored and fields and vehicles branch from
         public string baseDirectory;
+        // Track & Trace
+        public bool button1WasClicked;
         public bool TrackerAan;
         //current directory of Comm storage
         public string commDirectory, commFileName = "";
@@ -288,7 +290,7 @@ namespace AgIO
             Settings.Default.setPort_wasMachineModuleConnected = wasMachineModuleConnectedLastRun;
             Settings.Default.setPort_wasRtcmConnected = wasRtcmConnectedLastRun;
             Settings.Default.TrackEnabled = false;
-
+            Settings.Default.button1WasClicked = false;
             Settings.Default.Save();
 
             if (loopBackSocket != null)
@@ -865,12 +867,14 @@ namespace AgIO
                 if (TrackTraceCounter == 20 && TrackerAan == true)
                 {
               
-                
+                    string Id = Properties.Settings.Default.TrackId;
+                    string IP = Properties.Settings.Default.TrackIP;
+                    string Port = Properties.Settings.Default.TrackPort;
                     string date = DateTime.Now.ToString("yyyy/MM/dd");
                     string Time = DateTime.Now.ToString("HH:mm:ss");
                     string lat = lblCurrentLat.Text.Replace(",", ".");
                     string lon = lblCurentLon.Text.Replace(",", ".");
-                    var request = (HttpWebRequest)WebRequest.Create("http://gps.raycorp.nl:5055/?id=AOG1&timestamp=" + date + "T" + Time + "Z" + "&lat=" + lat + "&lon=" + lon);
+                    var request = (HttpWebRequest)WebRequest.Create(IP + ":" + Port + "/?id=" +  Id +  "&timestamp=" + date + "T" + Time + "Z" + "&lat=" + lat + "&lon=" + lon);
                     ////http://gps.raycorp.nl:5055/?id=AOG1&timestamp=" + ZendTijd + "&lat=" + Lat + "&lon=" + Long;
                     var postData = "";
                     var data = Encoding.ASCII.GetBytes(postData);
@@ -925,6 +929,7 @@ namespace AgIO
         private void btnNTRIP_Click(object sender, EventArgs e)
         {
             SettingsNTRIP();
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)

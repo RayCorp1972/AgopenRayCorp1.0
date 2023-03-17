@@ -81,15 +81,16 @@
             this.checkBoxusetcp = new System.Windows.Forms.CheckBox();
             this.label20 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.cboxIsNTRIPOn = new System.Windows.Forms.CheckBox();
-            this.btnSerialCancel = new System.Windows.Forms.Button();
-            this.btnSerialOK = new System.Windows.Forms.Button();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtBoxServerIP = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtBoxId = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.txtServerPort = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtBoxServerIP = new System.Windows.Forms.TextBox();
+            this.cboxIsNTRIPOn = new System.Windows.Forms.CheckBox();
+            this.btnSerialCancel = new System.Windows.Forms.Button();
+            this.btnSerialOK = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSendToUDPPort)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGGAInterval)).BeginInit();
@@ -777,6 +778,8 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.label22);
+            this.tabPage4.Controls.Add(this.txtBoxId);
             this.tabPage4.Controls.Add(this.label21);
             this.tabPage4.Controls.Add(this.txtServerPort);
             this.tabPage4.Controls.Add(this.button1);
@@ -790,6 +793,68 @@
             this.tabPage4.Text = "Track&Trace";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(361, 93);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(40, 33);
+            this.label22.TabIndex = 6;
+            this.label22.Text = "Id";
+            // 
+            // txtBoxId
+            // 
+            this.txtBoxId.Location = new System.Drawing.Point(367, 129);
+            this.txtBoxId.Name = "txtBoxId";
+            this.txtBoxId.Size = new System.Drawing.Size(200, 40);
+            this.txtBoxId.TabIndex = 5;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(9, 93);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(64, 33);
+            this.label21.TabIndex = 4;
+            this.label21.Text = "Port";
+            // 
+            // txtServerPort
+            // 
+            this.txtServerPort.Location = new System.Drawing.Point(15, 129);
+            this.txtServerPort.Name = "txtServerPort";
+            this.txtServerPort.Size = new System.Drawing.Size(240, 40);
+            this.txtServerPort.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Salmon;
+            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(15, 185);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 50);
+            this.button1.TabIndex = 92;
+            this.button1.Text = "On";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(9, 7);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(124, 33);
+            this.label18.TabIndex = 1;
+            this.label18.Text = "Server IP";
+            // 
+            // txtBoxServerIP
+            // 
+            this.txtBoxServerIP.Location = new System.Drawing.Point(15, 43);
+            this.txtBoxServerIP.Name = "txtBoxServerIP";
+            this.txtBoxServerIP.Size = new System.Drawing.Size(443, 40);
+            this.txtBoxServerIP.TabIndex = 0;
+            // 
             // cboxIsNTRIPOn
             // 
             this.cboxIsNTRIPOn.Appearance = System.Windows.Forms.Appearance.Button;
@@ -798,7 +863,7 @@
             this.cboxIsNTRIPOn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.cboxIsNTRIPOn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboxIsNTRIPOn.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxIsNTRIPOn.Location = new System.Drawing.Point(30, 581);
+            this.cboxIsNTRIPOn.Location = new System.Drawing.Point(16, 581);
             this.cboxIsNTRIPOn.Name = "cboxIsNTRIPOn";
             this.cboxIsNTRIPOn.Size = new System.Drawing.Size(150, 50);
             this.cboxIsNTRIPOn.TabIndex = 92;
@@ -816,7 +881,7 @@
             this.btnSerialCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSerialCancel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSerialCancel.Image = global::AgIO.Properties.Resources.Cancel64;
-            this.btnSerialCancel.Location = new System.Drawing.Point(502, 581);
+            this.btnSerialCancel.Location = new System.Drawing.Point(478, 577);
             this.btnSerialCancel.Name = "btnSerialCancel";
             this.btnSerialCancel.Size = new System.Drawing.Size(105, 64);
             this.btnSerialCancel.TabIndex = 95;
@@ -832,7 +897,7 @@
             this.btnSerialOK.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSerialOK.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnSerialOK.Image = global::AgIO.Properties.Resources.OK64;
-            this.btnSerialOK.Location = new System.Drawing.Point(632, 581);
+            this.btnSerialOK.Location = new System.Drawing.Point(625, 577);
             this.btnSerialOK.Name = "btnSerialOK";
             this.btnSerialOK.Size = new System.Drawing.Size(105, 64);
             this.btnSerialOK.TabIndex = 94;
@@ -840,60 +905,12 @@
             this.btnSerialOK.UseVisualStyleBackColor = true;
             this.btnSerialOK.Click += new System.EventHandler(this.btnSerialOK_Click);
             // 
-            // timer2
-            // 
-            this.timer2.Enabled = true;
-            this.timer2.Interval = 1000;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(9, 7);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(124, 33);
-            this.label18.TabIndex = 1;
-            this.label18.Text = "Server IP";
-            // 
-            // txtBoxServerIP
-            // 
-            this.txtBoxServerIP.Location = new System.Drawing.Point(15, 43);
-            this.txtBoxServerIP.Name = "txtBoxServerIP";
-            this.txtBoxServerIP.Size = new System.Drawing.Size(555, 40);
-            this.txtBoxServerIP.TabIndex = 0;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(9, 93);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(79, 33);
-            this.label21.TabIndex = 4;
-            this.label21.Text = "Poort";
-            // 
-            // txtServerPort
-            // 
-            this.txtServerPort.Location = new System.Drawing.Point(15, 129);
-            this.txtServerPort.Name = "txtServerPort";
-            this.txtServerPort.Size = new System.Drawing.Size(240, 40);
-            this.txtServerPort.TabIndex = 3;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(15, 205);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 51);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Zet aan";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // FormNtrip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(742, 695);
+            this.ClientSize = new System.Drawing.Size(742, 642);
             this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.cboxIsNTRIPOn);
@@ -954,7 +971,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox cboxToSerial;
         private System.Windows.Forms.CheckBox cboxToUDP;
@@ -987,5 +1003,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtBoxServerIP;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox txtBoxId;
     }
 }

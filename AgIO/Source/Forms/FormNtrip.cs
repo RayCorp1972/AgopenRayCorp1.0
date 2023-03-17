@@ -19,7 +19,7 @@ namespace AgIO
         //class variables
         private readonly FormLoop mf;
         private bool ntripStatusChanged= false;
-       
+        public bool button1WasClicked; 
         public FormNtrip(Form callingForm)
         {
             mf = callingForm as FormLoop;
@@ -56,12 +56,33 @@ namespace AgIO
             nudSendToUDPPort.Controls[0].Enabled = false;
 
         }
-        
-       
+
+
 
 
         private void FormNtrip_Load(object sender, EventArgs e)
         {
+            //Track and Trace
+            button1WasClicked = Properties.Settings.Default.button1WasClicked;
+
+            if (button1WasClicked == true)
+            {
+                button1.Text = "On";
+                button1.BackColor = System.Drawing.Color.LightGreen;
+            }
+            else
+            {
+                button1.BackColor = System.Drawing.Color.Salmon;
+                button1.Text = "Off";
+            }
+            txtBoxServerIP.Text = Properties.Settings.Default.TrackIP;
+            txtServerPort.Text = Properties.Settings.Default.TrackPort;
+            txtBoxId.Text = Properties.Settings.Default.TrackId;
+
+
+
+
+
             string hostName = Dns.GetHostName(); // Retrieve the Name of HOST
             tboxHostName.Text = hostName;
 
@@ -233,6 +254,11 @@ namespace AgIO
             mf.packetSizeNTRIP = Convert.ToInt32(comboboxPacketSize.Text);
             Properties.Settings.Default.setNTRIP_packetSize = Convert.ToInt32(comboboxPacketSize.Text);
 
+            //Track and Trace
+
+            Properties.Settings.Default.TrackIP = txtBoxServerIP.Text;
+            Properties.Settings.Default.TrackPort = txtServerPort.Text;
+            Properties.Settings.Default.TrackId = txtBoxId.Text;
 
             if (Properties.Settings.Default.setNTRIP_isOn && Properties.Settings.Default.setRadio_isOn)
             {
@@ -447,7 +473,9 @@ namespace AgIO
         // Track and Trace
         private void button1_Click(object sender, EventArgs e)
         {
-            //
+            Properties.Settings.Default.button1WasClicked = true;
+            button1.Text = "On";
+            button1.BackColor = System.Drawing.Color.LightGreen;
             Properties.Settings.Default.TrackEnabled = true;
         }
 
