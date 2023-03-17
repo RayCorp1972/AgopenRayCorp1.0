@@ -32,11 +32,11 @@ namespace AgIO
         private const int ALT = 0xA4;
         private const int EXTENDEDKEY = 0x1;
         private const int KEYUP = 0x2;
-
+        
         //Stringbuilder
         public StringBuilder logNMEASentence = new StringBuilder();
         private StringBuilder sbRTCM = new StringBuilder();
-
+        
         public bool isKeyboardOn = true;
 
         public bool isSendToSerial = true, isSendToUDP = false;
@@ -52,7 +52,7 @@ namespace AgIO
 
         //usually 256 - send ntrip to serial in chunks
         public int packetSizeNTRIP;
-
+        
         public bool lastHelloGPS, lastHelloAutoSteer, lastHelloMachine, lastHelloIMU;
         public bool isConnectedIMU, isConnectedSteer, isConnectedMachine;
 
@@ -63,10 +63,10 @@ namespace AgIO
         //used to hide the window and not update text fields and most counters
         public bool isAppInFocus = true, isLostFocus;
         public int focusSkipCounter = 310;
-
+        public int TrackTraceCounter = 0;
         //The base directory where Drive will be stored and fields and vehicles branch from
         public string baseDirectory;
-
+        public bool TrackerAan;
         //current directory of Comm storage
         public string commDirectory, commFileName = "";
 
@@ -78,9 +78,10 @@ namespace AgIO
         //First run
         private void FormLoop_Load(object sender, EventArgs e)
         {
+            TrackerAan = Settings.Default.TrackEnabled;
+            pictureBox3.Visible = false;
+            pictureBox4.Visible = false;
 
-
-           
             if (Settings.Default.setF_workingDirectory == "Default")
                 baseDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\AgOpenGPS\\";
             else baseDirectory = Settings.Default.setF_workingDirectory + "\\AgOpenGPS\\";
@@ -205,7 +206,7 @@ namespace AgIO
             isConnectedIMU = cboxIsIMUModule.Checked = Properties.Settings.Default.setMod_isIMUConnected;
             isConnectedSteer = cboxIsSteerModule.Checked = Properties.Settings.Default.setMod_isSteerConnected;
             isConnectedMachine = cboxIsMachineModule.Checked = Properties.Settings.Default.setMod_isMachineConnected;
-            
+
             SetModulesOnOff();
 
             oneSecondLoopTimer.Enabled = true;
@@ -225,7 +226,7 @@ namespace AgIO
         {
             if (isConnectedIMU)
             {
-                btnIMU.Visible = true; 
+                btnIMU.Visible = true;
                 lblIMUComm.Visible = true;
                 lblFromMU.Visible = true;
                 cboxIsIMUModule.BackgroundImage = Properties.Resources.Cancel64;
@@ -259,7 +260,7 @@ namespace AgIO
             {
                 btnSteer.Visible = true;
                 lblFromSteer.Visible = true;
-                lblToSteer.Visible = true; 
+                lblToSteer.Visible = true;
                 lblMod1Comm.Visible = true;
                 cboxIsSteerModule.BackgroundImage = Properties.Resources.Cancel64;
             }
@@ -286,6 +287,7 @@ namespace AgIO
             Settings.Default.setPort_wasSteerModuleConnected = wasSteerModuleConnectedLastRun;
             Settings.Default.setPort_wasMachineModuleConnected = wasMachineModuleConnectedLastRun;
             Settings.Default.setPort_wasRtcmConnected = wasRtcmConnectedLastRun;
+            Settings.Default.TrackEnabled = false;
 
             Settings.Default.Save();
 
@@ -317,7 +319,7 @@ namespace AgIO
                 oneSecondLoopTimer.Interval = 1000;
                 this.Width = 428;
                 this.Height = 500;
-                
+
                 return;
             }
 
@@ -327,6 +329,7 @@ namespace AgIO
             DoHelloAlarmLogic();
 
             DoTraffic();
+          
 
             if (focusSkipCounter != 0)
             {
@@ -334,7 +337,7 @@ namespace AgIO
                 lblCurrentLat.Text = latitude.ToString("N7");
             }
 
-           
+
             //do all the NTRIP routines
             DoNTRIPSecondRoutine();
 
@@ -361,14 +364,14 @@ namespace AgIO
                 focusSkipCounter = int.MaxValue;
             }
 
-            if (isLostFocus && focusSkipCounter !=0)
+            if (isLostFocus && focusSkipCounter != 0)
             {
                 if (focusSkipCounter == 1)
                 {
                     WindowState = FormWindowState.Minimized;
                 }
 
-                focusSkipCounter-- ;
+                focusSkipCounter--;
             }
 
             #endregion
@@ -378,7 +381,7 @@ namespace AgIO
             {
                 TwoSecondLoop();
                 twoSecondTimer = secondsSinceStart;
-               
+
             }
 
             //every 10 seconds
@@ -386,7 +389,6 @@ namespace AgIO
             {
                 TenSecondLoop();
                 tenSecondTimer = secondsSinceStart;
-                timerTT.Enabled = true;
 
             }
 
@@ -395,7 +397,7 @@ namespace AgIO
             {
                 ThreeMinuteLoop();
                 threeMinuteTimer = secondsSinceStart;
-                
+
             }
 
             // 1 Second Loop Part2 
@@ -419,6 +421,7 @@ namespace AgIO
                     writer.Write(logNMEASentence.ToString());
                 }
                 logNMEASentence.Clear();
+
             }
 
             if (focusSkipCounter < 310) lblSkipCounter.Text = focusSkipCounter.ToString();
@@ -428,6 +431,8 @@ namespace AgIO
 
         private void TenSecondLoop()
         {
+
+
             if (focusSkipCounter != 0 && WindowState == FormWindowState.Minimized)
             {
                 focusSkipCounter = 0;
@@ -473,7 +478,9 @@ namespace AgIO
                         }
 
                         lblMessagesFound.Text = count.ToString();
-                        timerTT.Enabled = true;
+
+
+                        
                     }
 
                     catch
@@ -481,7 +488,7 @@ namespace AgIO
                         sbRTCM.Clear();
                         sbRTCM.Append("Error");
                     }
-                    
+
                 }
 
                 #region Serial update
@@ -528,8 +535,8 @@ namespace AgIO
 
                 #endregion
 
-               
-               
+
+
 
 
 
@@ -546,7 +553,7 @@ namespace AgIO
                 lblMessages.Text = "Reading...";
                 threeMinuteTimer = secondsSinceStart;
                 lblMessagesFound.Text = "-";
-                aList.Clear();  
+                aList.Clear();
                 rList.Clear();
 
             }
@@ -569,7 +576,7 @@ namespace AgIO
             if (isViewAdvanced)
             {
                 btnSlide.PerformClick();
-                
+
             }
         }
 
@@ -629,7 +636,7 @@ namespace AgIO
 
         private void FormLoop_Resize(object sender, EventArgs e)
         {
-            if(this.WindowState == FormWindowState.Minimized)
+            if (this.WindowState == FormWindowState.Minimized)
             {
                 if (isViewAdvanced) btnSlide.PerformClick();
                 isLostFocus = true;
@@ -640,7 +647,7 @@ namespace AgIO
         private void ShowAgIO()
         {
             Process[] processName = Process.GetProcessesByName("AgIO");
-            
+
             if (processName.Length != 0)
             {
                 // Guard: check if window already has focus.
@@ -657,8 +664,8 @@ namespace AgIO
 
                 // Show window in forground.
                 SetForegroundWindow(processName[0].MainWindowHandle);
-            }  
-            
+            }
+
             //{
             //    //Set foreground window
             //    if (IsIconic(processName[0].MainWindowHandle))
@@ -671,6 +678,13 @@ namespace AgIO
 
         private void DoTraffic()
         {
+            TrackerAan =  Properties.Settings.Default.TrackEnabled;
+            label15.Text = TrackerAan.ToString();
+            //Track and Trace
+            TrackandTrace();
+            TrackTraceCounter++;
+            //label14.Text = TrackTraceCounter.ToString(); // Check if counter works, label hidden
+
             traffic.helloFromMachine++;
             traffic.helloFromAutoSteer++;
             traffic.helloFromIMU++;
@@ -693,7 +707,8 @@ namespace AgIO
                 }
 
                 if (isConnectedIMU)
-                lblFromMU.Text = traffic.cntrIMUOut == 0 ? "--" : (traffic.cntrIMUOut).ToString();
+                    lblFromMU.Text = traffic.cntrIMUOut == 0 ? "--" : (traffic.cntrIMUOut).ToString();
+               
 
                 //reset all counters
                 traffic.cntrPGNToAOG = traffic.cntrPGNFromAOG = traffic.cntrGPSOut =
@@ -703,7 +718,7 @@ namespace AgIO
                 lblCurentLon.Text = longitude.ToString("N7");
                 lblCurrentLat.Text = latitude.ToString("N7");
 
-               
+
 
             }
         }
@@ -735,7 +750,7 @@ namespace AgIO
         private void cboxIsSteerModule_Click(object sender, EventArgs e)
         {
             isConnectedSteer = cboxIsSteerModule.Checked;
-            SetModulesOnOff();  
+            SetModulesOnOff();
         }
 
         private void cboxIsMachineModule_Click(object sender, EventArgs e)
@@ -783,7 +798,7 @@ namespace AgIO
 
         private void btnRelayTest_Click(object sender, EventArgs e)
         {
-                helloFromAgIO[7] = 1;
+            helloFromAgIO[7] = 1;
         }
 
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
@@ -841,33 +856,44 @@ namespace AgIO
             }
         }
 
-        private void timerTT_Tick(object sender, EventArgs e)
+
+
+        //Track&Trace
+        private void TrackandTrace()
         {
-            if (timerTT.Interval > 1200)
-            {
-                string date = DateTime.Now.ToString("yyyy/MM/dd");
-                string Time = DateTime.Now.ToString("HH:mm:ss");
-                string lat = latitude.ToString();
-                string lon = longitude.ToString();
 
-                var request = (HttpWebRequest)WebRequest.Create("http://gps.raycorp.nl:5055/" + "?id=12345&timestamp=" + date + "T" + Time + "Z" + "&" + lat + "&" + lon);
-                var postData = "";
-                var data = Encoding.ASCII.GetBytes(postData);
-
-                request.Method = "POST";
-                request.ContentType = "application/json";
-                request.ContentLength = data.Length;
-
-                using (var stream = request.GetRequestStream())
+                if (TrackTraceCounter == 20 && TrackerAan == true)
                 {
-                    stream.Write(data, 0, data.Length);
-                }
-                timerTT.Interval = 1000;
-                return;
-            }
-        }
+              
+                
+                    string date = DateTime.Now.ToString("yyyy/MM/dd");
+                    string Time = DateTime.Now.ToString("HH:mm:ss");
+                    string lat = lblCurrentLat.Text.Replace(",", ".");
+                    string lon = lblCurentLon.Text.Replace(",", ".");
+                    var request = (HttpWebRequest)WebRequest.Create("http://gps.raycorp.nl:5055/?id=AOG1&timestamp=" + date + "T" + Time + "Z" + "&lat=" + lat + "&lon=" + lon);
+                    ////http://gps.raycorp.nl:5055/?id=AOG1&timestamp=" + ZendTijd + "&lat=" + Lat + "&lon=" + Long;
+                    var postData = "";
+                    var data = Encoding.ASCII.GetBytes(postData);
 
-      
+                    request.Method = "POST";
+                    request.ContentType = "application/json";
+                    request.ContentLength = data.Length;
+
+                    using (var stream = request.GetRequestStream())
+                    {
+                        stream.Write(data, 0, data.Length);
+                    }
+                    request.Abort();
+                    TrackTraceCounter = 0;
+
+                }
+
+                else return;
+            }
+            
+        
+
+
 
         private void lblNTRIPBytes_Click(object sender, EventArgs e)
         {

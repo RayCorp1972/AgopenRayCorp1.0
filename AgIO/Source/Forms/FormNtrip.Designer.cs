@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label23 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cboxToSerial = new System.Windows.Forms.CheckBox();
             this.cboxToUDP = new System.Windows.Forms.CheckBox();
@@ -80,16 +81,15 @@
             this.checkBoxusetcp = new System.Windows.Forms.CheckBox();
             this.label20 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label21 = new System.Windows.Forms.Label();
-            this.txtServerPort = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtBoxServerIP = new System.Windows.Forms.TextBox();
             this.cboxIsNTRIPOn = new System.Windows.Forms.CheckBox();
             this.btnSerialCancel = new System.Windows.Forms.Button();
             this.btnSerialOK = new System.Windows.Forms.Button();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.label23 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtBoxServerIP = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtServerPort = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSendToUDPPort)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGGAInterval)).BeginInit();
@@ -131,6 +131,15 @@
             this.tabPage2.Size = new System.Drawing.Size(733, 515);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Position";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(274, 13);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(239, 33);
+            this.label23.TabIndex = 143;
+            this.label23.Text = "NIET GEBRUiKEN!!";
             // 
             // label1
             // 
@@ -781,48 +790,6 @@
             this.tabPage4.Text = "Track&Trace";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(9, 93);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(79, 33);
-            this.label21.TabIndex = 4;
-            this.label21.Text = "Poort";
-            // 
-            // txtServerPort
-            // 
-            this.txtServerPort.Location = new System.Drawing.Point(15, 129);
-            this.txtServerPort.Name = "txtServerPort";
-            this.txtServerPort.Size = new System.Drawing.Size(240, 40);
-            this.txtServerPort.TabIndex = 3;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(15, 205);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 51);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Zet aan";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(9, 7);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(124, 33);
-            this.label18.TabIndex = 1;
-            this.label18.Text = "Server IP";
-            // 
-            // txtBoxServerIP
-            // 
-            this.txtBoxServerIP.Location = new System.Drawing.Point(15, 43);
-            this.txtBoxServerIP.Name = "txtBoxServerIP";
-            this.txtBoxServerIP.Size = new System.Drawing.Size(555, 40);
-            this.txtBoxServerIP.TabIndex = 0;
-            // 
             // cboxIsNTRIPOn
             // 
             this.cboxIsNTRIPOn.Appearance = System.Windows.Forms.Appearance.Button;
@@ -879,14 +846,47 @@
             this.timer2.Interval = 1000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // label23
+            // label18
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(274, 13);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(239, 33);
-            this.label23.TabIndex = 143;
-            this.label23.Text = "NIET GEBRUiKEN!!";
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(9, 7);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(124, 33);
+            this.label18.TabIndex = 1;
+            this.label18.Text = "Server IP";
+            // 
+            // txtBoxServerIP
+            // 
+            this.txtBoxServerIP.Location = new System.Drawing.Point(15, 43);
+            this.txtBoxServerIP.Name = "txtBoxServerIP";
+            this.txtBoxServerIP.Size = new System.Drawing.Size(555, 40);
+            this.txtBoxServerIP.TabIndex = 0;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(9, 93);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(79, 33);
+            this.label21.TabIndex = 4;
+            this.label21.Text = "Poort";
+            // 
+            // txtServerPort
+            // 
+            this.txtServerPort.Location = new System.Drawing.Point(15, 129);
+            this.txtServerPort.Name = "txtServerPort";
+            this.txtServerPort.Size = new System.Drawing.Size(240, 40);
+            this.txtServerPort.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(15, 205);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(168, 51);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Zet aan";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormNtrip
             // 
@@ -954,11 +954,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtBoxServerIP;
-        private System.Windows.Forms.TextBox txtServerPort;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox cboxToSerial;
@@ -987,5 +982,10 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtServerPort;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtBoxServerIP;
     }
 }

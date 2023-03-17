@@ -359,6 +359,8 @@ namespace AgOpenGPS
 
             //sounds class
             sounds = new CSound();
+
+           
         }
 
         //Initialize items before the form Loads or is visible
@@ -1269,8 +1271,11 @@ namespace AgOpenGPS
             form.Show(this);
         }
 
+     
+       
 
-      
+
+
     }//class FormGPS
 }//namespace AgOpenGPS
 

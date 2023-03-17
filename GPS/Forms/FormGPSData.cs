@@ -62,6 +62,8 @@ namespace AgOpenGPS
             {
                 lblAltitude.Text = mf.AltitudeFeet;
             }
+
+
         }
 
         private void FormGPSData_Load(object sender, EventArgs e)
@@ -69,6 +71,7 @@ namespace AgOpenGPS
             //lblSunrise.Text = mf.sunrise.ToString("HH:mm");
             lblVersion.Text = "RayCorp 2023";
             //lblSunset.Text = mf.sunset.ToString("HH:mm");
+           
         }
 
         private void FormGPSData_FormClosing(object sender, FormClosingEventArgs e)
@@ -76,27 +79,6 @@ namespace AgOpenGPS
             mf.isGPSSentencesOn = false;
         }
 
-        public void TrackandTrace()
-        {
-            string date = DateTime.Now.ToString("yyyy/MM/dd");
-            string Time = DateTime.Now.ToString("HH:mm:ss");
-            string lat = mf.Latitude;
-        string lon = mf.Longitude;
-
-            var request = (HttpWebRequest)WebRequest.Create("http://gps.raycorp.nl:5055/" + "?id=12345&timestamp=" + date + "T" + Time + "Z" + "&" + lat + "&" + lon);
-            var postData = "";
-            var data = Encoding.ASCII.GetBytes(postData);
-
-            request.Method = "POST";
-            request.ContentType = "application/json";
-            request.ContentLength = data.Length;
-
-            using (var stream = request.GetRequestStream())
-            {
-                stream.Write(data, 0, data.Length);
-            }
-            request.ServicePoint.Expect100Continue = false;
-        }
     }
 }
 

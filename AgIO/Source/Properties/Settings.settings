@@ -176,5 +176,11 @@
     <Setting Name="etIP_SubnetThree" Type="System.Byte" Scope="User">
       <Value Profile="(Default)">5</Value>
     </Setting>
+    <Setting Name="TrackTraceAanUIT" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Uit</Value>
+    </Setting>
+    <Setting Name="TrackEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

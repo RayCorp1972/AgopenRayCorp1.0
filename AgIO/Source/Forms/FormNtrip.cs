@@ -19,7 +19,7 @@ namespace AgIO
         //class variables
         private readonly FormLoop mf;
         private bool ntripStatusChanged= false;
-
+       
         public FormNtrip(Form callingForm)
         {
             mf = callingForm as FormLoop;
@@ -54,7 +54,11 @@ namespace AgIO
             nudLatitude.Controls[0].Enabled = false;
             nudLongitude.Controls[0].Enabled = false;
             nudSendToUDPPort.Controls[0].Enabled = false;
+
         }
+        
+       
+
 
         private void FormNtrip_Load(object sender, EventArgs e)
         {
@@ -72,7 +76,7 @@ namespace AgIO
             tboxCasterIP.Text = Properties.Settings.Default.setNTRIP_casterIP;
             nudCasterPort.Value = Properties.Settings.Default.setNTRIP_casterPort;
             nudSendToUDPPort.Value = Properties.Settings.Default.setNTRIP_sendToUDPPort;
-
+            label15.Text = Properties.Settings.Default.TrackTraceAanUIT;
             cboxIsNTRIPOn.Checked = Properties.Settings.Default.setNTRIP_isOn;
 
             tboxUserName.Text = Properties.Settings.Default.setNTRIP_userName;
@@ -443,24 +447,8 @@ namespace AgIO
         // Track and Trace
         private void button1_Click(object sender, EventArgs e)
         {
-            string date = DateTime.Now.ToString("yyyy/MM/dd");
-            string Time = DateTime.Now.ToString("HH:mm:ss");
-            string lat = mf.latitude.ToString();
-            string lon = mf.longitude.ToString();
-            
-            var request = (HttpWebRequest)WebRequest.Create("http://gps.raycorp.nl:5055/" + "?id=12345&timestamp=" + date + "T" + Time + "Z" + "&" + lat + "&" + lon);
-            var postData = "";        
-            var data = Encoding.ASCII.GetBytes(postData);
-
-            request.Method = "POST";
-            request.ContentType = "application/json";
-            request.ContentLength = data.Length;
-
-            using (var stream = request.GetRequestStream())
-            {
-                stream.Write(data, 0, data.Length);
-            }
-            request.ServicePoint.Expect100Continue = false;
+            //
+            Properties.Settings.Default.TrackEnabled = true;
         }
 
         private void timer2_Tick(object sender, EventArgs e)

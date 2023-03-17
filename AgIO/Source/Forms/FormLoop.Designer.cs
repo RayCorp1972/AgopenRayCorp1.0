@@ -105,10 +105,15 @@ namespace AgIO
             this.btnExit = new System.Windows.Forms.Button();
             this.btnRunAOG = new System.Windows.Forms.Button();
             this.btnRelayTest = new System.Windows.Forms.Button();
-            this.timerTT = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // oneSecondLoopTimer
@@ -125,7 +130,7 @@ namespace AgIO
             this.label6.Location = new System.Drawing.Point(6, 9);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 24);
+            this.label6.Size = new System.Drawing.Size(25, 16);
             this.label6.TabIndex = 151;
             this.label6.Text = "Lat";
             // 
@@ -138,7 +143,7 @@ namespace AgIO
             this.label8.Location = new System.Drawing.Point(3, 31);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 24);
+            this.label8.Size = new System.Drawing.Size(28, 16);
             this.label8.TabIndex = 152;
             this.label8.Text = "Lon";
             // 
@@ -151,7 +156,7 @@ namespace AgIO
             this.lblCurentLon.Location = new System.Drawing.Point(30, 30);
             this.lblCurentLon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurentLon.Name = "lblCurentLon";
-            this.lblCurentLon.Size = new System.Drawing.Size(157, 28);
+            this.lblCurentLon.Size = new System.Drawing.Size(98, 18);
             this.lblCurentLon.TabIndex = 154;
             this.lblCurentLon.Text = "-888.8888888";
             // 
@@ -164,7 +169,7 @@ namespace AgIO
             this.lblCurrentLat.Location = new System.Drawing.Point(30, 8);
             this.lblCurrentLat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentLat.Name = "lblCurrentLat";
-            this.lblCurrentLat.Size = new System.Drawing.Size(144, 28);
+            this.lblCurrentLat.Size = new System.Drawing.Size(90, 18);
             this.lblCurrentLat.TabIndex = 153;
             this.lblCurrentLat.Text = "-53.1234567";
             // 
@@ -178,7 +183,7 @@ namespace AgIO
             this.lblWatch.Name = "lblWatch";
             this.lblWatch.Size = new System.Drawing.Size(105, 18);
             this.lblWatch.TabIndex = 146;
-            this.lblWatch.Text = "Watch";
+            this.lblWatch.Text = "Verbinden";
             this.lblWatch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblNTRIPBytes
@@ -371,14 +376,14 @@ namespace AgIO
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.ShowDropDownArrow = false;
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(96, 67);
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(96, 68);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem1.Image = global::AgIO.Properties.Resources.VehFileSave;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(416, 74);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(294, 70);
             this.toolStripMenuItem1.Text = "Opslaan";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -387,7 +392,7 @@ namespace AgIO
             this.toolStripMenuItem2.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem2.Image = global::AgIO.Properties.Resources.VehFileLoad;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(416, 74);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(294, 70);
             this.toolStripMenuItem2.Text = "Laad";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
@@ -396,7 +401,7 @@ namespace AgIO
             this.toolStripMenuItem4.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem4.Image = global::AgIO.Properties.Resources.satellite;
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(416, 74);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(294, 70);
             this.toolStripMenuItem4.Text = "GPS Data";
             this.toolStripMenuItem4.Visible = false;
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
@@ -406,7 +411,7 @@ namespace AgIO
             this.deviceManagerToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deviceManagerToolStripMenuItem.Image = global::AgIO.Properties.Resources.DeviceManager;
             this.deviceManagerToolStripMenuItem.Name = "deviceManagerToolStripMenuItem";
-            this.deviceManagerToolStripMenuItem.Size = new System.Drawing.Size(416, 74);
+            this.deviceManagerToolStripMenuItem.Size = new System.Drawing.Size(294, 70);
             this.deviceManagerToolStripMenuItem.Text = "Device Manager";
             this.deviceManagerToolStripMenuItem.Visible = false;
             this.deviceManagerToolStripMenuItem.Click += new System.EventHandler(this.deviceManagerToolStripMenuItem_Click);
@@ -425,14 +430,14 @@ namespace AgIO
             this.settingsMenuStrip.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.settingsMenuStrip.Name = "settingsMenuStrip";
             this.settingsMenuStrip.ShowDropDownArrow = false;
-            this.settingsMenuStrip.Size = new System.Drawing.Size(96, 67);
+            this.settingsMenuStrip.Size = new System.Drawing.Size(96, 68);
             // 
             // saveToolStrip
             // 
             this.saveToolStrip.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveToolStrip.Image = global::AgIO.Properties.Resources.NTRIP_Client;
             this.saveToolStrip.Name = "saveToolStrip";
-            this.saveToolStrip.Size = new System.Drawing.Size(394, 74);
+            this.saveToolStrip.Size = new System.Drawing.Size(283, 70);
             this.saveToolStrip.Text = "Client NTRIP";
             this.saveToolStrip.Click += new System.EventHandler(this.btnNTRIP_Click);
             // 
@@ -441,7 +446,7 @@ namespace AgIO
             this.loadToolStrip.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loadToolStrip.Image = global::AgIO.Properties.Resources.RadioSettings;
             this.loadToolStrip.Name = "loadToolStrip";
-            this.loadToolStrip.Size = new System.Drawing.Size(394, 74);
+            this.loadToolStrip.Size = new System.Drawing.Size(283, 70);
             this.loadToolStrip.Text = "Radio NTRIP";
             this.loadToolStrip.Visible = false;
             this.loadToolStrip.Click += new System.EventHandler(this.btnRadio_Click_1);
@@ -451,7 +456,7 @@ namespace AgIO
             this.serialPassThroughToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.serialPassThroughToolStripMenuItem.Image = global::AgIO.Properties.Resources.NTRIP_Serial;
             this.serialPassThroughToolStripMenuItem.Name = "serialPassThroughToolStripMenuItem";
-            this.serialPassThroughToolStripMenuItem.Size = new System.Drawing.Size(394, 74);
+            this.serialPassThroughToolStripMenuItem.Size = new System.Drawing.Size(283, 70);
             this.serialPassThroughToolStripMenuItem.Text = "Serial NTRIP";
             this.serialPassThroughToolStripMenuItem.Click += new System.EventHandler(this.serialPassThroughToolStripMenuItem_Click);
             // 
@@ -464,7 +469,7 @@ namespace AgIO
             this.lblSteerAngle.Location = new System.Drawing.Point(522, 85);
             this.lblSteerAngle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSteerAngle.Name = "lblSteerAngle";
-            this.lblSteerAngle.Size = new System.Drawing.Size(61, 28);
+            this.lblSteerAngle.Size = new System.Drawing.Size(40, 18);
             this.lblSteerAngle.TabIndex = 473;
             this.lblSteerAngle.Text = "UDP";
             // 
@@ -479,7 +484,7 @@ namespace AgIO
             this.label1.Location = new System.Drawing.Point(15, 364);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 22);
+            this.label1.Size = new System.Drawing.Size(77, 15);
             this.label1.TabIndex = 470;
             this.label1.Text = "Com Ports:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -507,7 +512,7 @@ namespace AgIO
             this.lblSerialPorts.Location = new System.Drawing.Point(90, 365);
             this.lblSerialPorts.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSerialPorts.Name = "lblSerialPorts";
-            this.lblSerialPorts.Size = new System.Drawing.Size(66, 22);
+            this.lblSerialPorts.Size = new System.Drawing.Size(45, 14);
             this.lblSerialPorts.TabIndex = 467;
             this.lblSerialPorts.Text = "Com12";
             this.lblSerialPorts.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -535,7 +540,7 @@ namespace AgIO
             this.lblIP.Location = new System.Drawing.Point(6, 305);
             this.lblIP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIP.Name = "lblIP";
-            this.lblIP.Size = new System.Drawing.Size(162, 26);
+            this.lblIP.Size = new System.Drawing.Size(106, 18);
             this.lblIP.TabIndex = 464;
             this.lblIP.Text = "288.288.288.288";
             this.lblIP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -569,7 +574,7 @@ namespace AgIO
             this.lblWASCounts.Location = new System.Drawing.Point(522, 108);
             this.lblWASCounts.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWASCounts.Name = "lblWASCounts";
-            this.lblWASCounts.Size = new System.Drawing.Size(65, 28);
+            this.lblWASCounts.Size = new System.Drawing.Size(43, 18);
             this.lblWASCounts.TabIndex = 476;
             this.lblWASCounts.Text = "Only";
             // 
@@ -582,7 +587,7 @@ namespace AgIO
             this.label3.Location = new System.Drawing.Point(469, 84);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 29);
+            this.label3.Size = new System.Drawing.Size(56, 19);
             this.label3.TabIndex = 477;
             this.label3.Text = "Angle:";
             // 
@@ -595,7 +600,7 @@ namespace AgIO
             this.label4.Location = new System.Drawing.Point(461, 107);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 29);
+            this.label4.Size = new System.Drawing.Size(64, 19);
             this.label4.TabIndex = 478;
             this.label4.Text = "Counts:";
             // 
@@ -608,7 +613,7 @@ namespace AgIO
             this.label2.Location = new System.Drawing.Point(461, 142);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 29);
+            this.label2.Size = new System.Drawing.Size(61, 19);
             this.label2.TabIndex = 481;
             this.label2.Text = "Switch:";
             // 
@@ -621,7 +626,7 @@ namespace AgIO
             this.lblSwitchStatus.Location = new System.Drawing.Point(522, 143);
             this.lblSwitchStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSwitchStatus.Name = "lblSwitchStatus";
-            this.lblSwitchStatus.Size = new System.Drawing.Size(27, 28);
+            this.lblSwitchStatus.Size = new System.Drawing.Size(18, 18);
             this.lblSwitchStatus.TabIndex = 482;
             this.lblSwitchStatus.Text = "*";
             // 
@@ -634,7 +639,7 @@ namespace AgIO
             this.lblWorkSwitchStatus.Location = new System.Drawing.Point(522, 166);
             this.lblWorkSwitchStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWorkSwitchStatus.Name = "lblWorkSwitchStatus";
-            this.lblWorkSwitchStatus.Size = new System.Drawing.Size(27, 28);
+            this.lblWorkSwitchStatus.Size = new System.Drawing.Size(18, 18);
             this.lblWorkSwitchStatus.TabIndex = 484;
             this.lblWorkSwitchStatus.Text = "*";
             // 
@@ -647,7 +652,7 @@ namespace AgIO
             this.label9.Location = new System.Drawing.Point(470, 165);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 29);
+            this.label9.Size = new System.Drawing.Size(52, 19);
             this.label9.TabIndex = 483;
             this.label9.Text = "Work:";
             // 
@@ -677,7 +682,7 @@ namespace AgIO
             this.lblMessagesFound.Location = new System.Drawing.Point(651, 47);
             this.lblMessagesFound.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMessagesFound.Name = "lblMessagesFound";
-            this.lblMessagesFound.Size = new System.Drawing.Size(27, 28);
+            this.lblMessagesFound.Size = new System.Drawing.Size(18, 18);
             this.lblMessagesFound.TabIndex = 491;
             this.lblMessagesFound.Text = "0";
             this.lblMessagesFound.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -691,7 +696,7 @@ namespace AgIO
             this.label5.Location = new System.Drawing.Point(599, 47);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 28);
+            this.label5.Size = new System.Drawing.Size(53, 18);
             this.label5.TabIndex = 492;
             this.label5.Text = "Found:";
             // 
@@ -704,7 +709,7 @@ namespace AgIO
             this.lbl1To8.Location = new System.Drawing.Point(472, 230);
             this.lbl1To8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl1To8.Name = "lbl1To8";
-            this.lbl1To8.Size = new System.Drawing.Size(132, 28);
+            this.lbl1To8.Size = new System.Drawing.Size(88, 18);
             this.lbl1To8.TabIndex = 500;
             this.lbl1To8.Text = "00000000";
             // 
@@ -717,7 +722,7 @@ namespace AgIO
             this.label10.Location = new System.Drawing.Point(488, 213);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 24);
+            this.label10.Size = new System.Drawing.Size(56, 16);
             this.label10.TabIndex = 499;
             this.label10.Text = "8  <<  1";
             // 
@@ -730,7 +735,7 @@ namespace AgIO
             this.lbl9To16.Location = new System.Drawing.Point(472, 273);
             this.lbl9To16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl9To16.Name = "lbl9To16";
-            this.lbl9To16.Size = new System.Drawing.Size(132, 28);
+            this.lbl9To16.Size = new System.Drawing.Size(88, 18);
             this.lbl9To16.TabIndex = 502;
             this.lbl9To16.Text = "00000000";
             // 
@@ -743,7 +748,7 @@ namespace AgIO
             this.label12.Location = new System.Drawing.Point(486, 256);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(91, 24);
+            this.label12.Size = new System.Drawing.Size(59, 16);
             this.label12.TabIndex = 501;
             this.label12.Text = "16 <<  9";
             // 
@@ -756,7 +761,7 @@ namespace AgIO
             this.lblPacketSize.Location = new System.Drawing.Point(622, 4);
             this.lblPacketSize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPacketSize.Name = "lblPacketSize";
-            this.lblPacketSize.Size = new System.Drawing.Size(27, 28);
+            this.lblPacketSize.Size = new System.Drawing.Size(18, 18);
             this.lblPacketSize.TabIndex = 505;
             this.lblPacketSize.Text = "0";
             this.lblPacketSize.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -770,7 +775,7 @@ namespace AgIO
             this.label11.Location = new System.Drawing.Point(598, 4);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(31, 28);
+            this.label11.Size = new System.Drawing.Size(20, 18);
             this.label11.TabIndex = 506;
             this.label11.Text = "L:";
             // 
@@ -783,7 +788,7 @@ namespace AgIO
             this.lblStationID.Location = new System.Drawing.Point(627, 26);
             this.lblStationID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStationID.Name = "lblStationID";
-            this.lblStationID.Size = new System.Drawing.Size(27, 28);
+            this.lblStationID.Size = new System.Drawing.Size(18, 18);
             this.lblStationID.TabIndex = 507;
             this.lblStationID.Text = "0";
             this.lblStationID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -797,7 +802,7 @@ namespace AgIO
             this.label13.Location = new System.Drawing.Point(598, 26);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(45, 28);
+            this.label13.Size = new System.Drawing.Size(29, 18);
             this.label13.TabIndex = 508;
             this.label13.Text = "ID:";
             // 
@@ -810,7 +815,7 @@ namespace AgIO
             this.lblSkipCounter.Location = new System.Drawing.Point(30, 53);
             this.lblSkipCounter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSkipCounter.Name = "lblSkipCounter";
-            this.lblSkipCounter.Size = new System.Drawing.Size(43, 24);
+            this.lblSkipCounter.Size = new System.Drawing.Size(29, 16);
             this.lblSkipCounter.TabIndex = 509;
             this.lblSkipCounter.Text = "285";
             this.lblSkipCounter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -837,7 +842,7 @@ namespace AgIO
             this.label7.Location = new System.Drawing.Point(3, 53);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 24);
+            this.label7.Size = new System.Drawing.Size(28, 16);
             this.label7.TabIndex = 511;
             this.label7.Text = "Min";
             // 
@@ -1155,18 +1160,56 @@ namespace AgIO
             this.btnRelayTest.UseVisualStyleBackColor = false;
             this.btnRelayTest.Click += new System.EventHandler(this.btnRelayTest_Click);
             // 
-            // timerTT
+            // pictureBox3
             // 
-            this.timerTT.Interval = 4000;
-            this.timerTT.Tick += new System.EventHandler(this.timerTT_Tick);
+            this.pictureBox3.Image = global::AgIO.Properties.Resources.Check_OK;
+            this.pictureBox3.Location = new System.Drawing.Point(103, 130);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(26, 31);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 512;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::AgIO.Properties.Resources.Check_Error;
+            this.pictureBox4.Location = new System.Drawing.Point(103, 130);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(26, 31);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 513;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(15, 180);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(52, 18);
+            this.label14.TabIndex = 514;
+            this.label14.Text = "label14";
+            this.label14.Visible = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(15, 202);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(52, 18);
+            this.label15.TabIndex = 515;
+            this.label15.Text = "label15";
             // 
             // FormLoop
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(399, 446);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lblSkipCounter);
             this.Controls.Add(this.lblCount);
@@ -1247,6 +1290,8 @@ namespace AgIO
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1322,7 +1367,10 @@ namespace AgIO
         private System.Windows.Forms.Button btnRelayTest;
         private System.Windows.Forms.Label lblCount;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Timer timerTT;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
     }
 }
 

@@ -573,7 +573,7 @@
             this.Name = "FormGPSData";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "System Data";
+            this.Text = "GPS Data";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormGPSData_FormClosing);
             this.Load += new System.EventHandler(this.FormGPSData_Load);
             this.ResumeLayout(false);

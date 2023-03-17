@@ -110,17 +110,19 @@ namespace AgIO
                     //watchdog for Ntrip
                     if (isNTRIP_Connecting)
                     {
-                        lblWatch.Text = gStr.gsAuthourizing;
+                        lblWatch.Text = "Autoriseren";//gStr.gsAuthourizing;
                     }
                     else
                     {
                         if (isNTRIP_RequiredOn && NTRIP_Watchdog > 10)
                         {
-                            lblWatch.Text = gStr.gsWaiting;
+                            lblWatch.Text = "Wachten op verbinding";//gStr.gsWaiting;
+                            pictureBox3.Visible = false;
+                            pictureBox4.Visible = true;
                         }
                         else
                         {
-                            lblWatch.Text = gStr.gsListening;
+                            lblWatch.Text = "Ontvangen";//gStr.gsListening;
 
                             if (isNTRIP_RequiredOn)
                             {
@@ -135,8 +137,11 @@ namespace AgIO
 
                     if (sendGGAInterval > 0 && isNTRIP_Sending)
                     {
-                        lblWatch.Text = "Send GGA";
+                        lblWatch.Text = "Verstuur GGA";
                         isNTRIP_Sending = false;
+                        pictureBox3.Visible = true;
+                        pictureBox4.Visible = false;
+
                     }
                 }
             }
@@ -155,14 +160,14 @@ namespace AgIO
 
         public void ConfigureNTRIP()
         {
-            lblWatch.Text = "Wait GPS";
-            lblMessages.Text = "Reading...";
+            lblWatch.Text = "Wachten op GPS";
+            lblMessages.Text = "Lezen...";
             lblNTRIP_IP.Text = "";
             lblMount.Text = "";
-
+            pictureBox3.Visible = false;
             aList.Clear();
             rList.Clear();
-            lblMessages.Text = "Reading....";
+            lblMessages.Text = "Lezen....";
 
             //start NTRIP if required
             isNTRIP_RequiredOn = Properties.Settings.Default.setNTRIP_isOn;
