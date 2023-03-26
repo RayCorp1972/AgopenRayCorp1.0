@@ -142,6 +142,7 @@ namespace AgOpenGPS
                                             fd.WorkedAcres;
                     else
                         lblFieldStatus.Text = fd.WorkedAcres;
+
                 }
 
                 //hide the NAv panel in 6  secs
@@ -285,7 +286,7 @@ namespace AgOpenGPS
             {
                 //reset the counter
                 displayUpdateHalfSecondCounter = oneHalfSecond;
-
+                label2.Text = DateTime.Now.ToString("HH:mm");
                 isFlashOnOff = !isFlashOnOff;
 
                 //AutoSteerAuto button enable - Ray Bear inspired code - Thx Ray!

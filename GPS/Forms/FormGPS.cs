@@ -371,8 +371,8 @@ namespace AgOpenGPS
             {
                 form.ShowDialog(this);
             }
-           
 
+            label2.Hide();
             this.MouseWheel += ZoomByMouseWheel;
 
             //start udp server is required
@@ -484,6 +484,7 @@ namespace AgOpenGPS
 
             //nmea limiter
             udpWatch.Start();
+            
         }
 
         private void btnResetToolHeading_Click(object sender, EventArgs e)
@@ -634,6 +635,7 @@ namespace AgOpenGPS
                     GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, 9729);
                     GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, 9729);
                 }
+                
             }
         }
 
@@ -806,6 +808,7 @@ namespace AgOpenGPS
             //panel1.SendToBack();
             timer2.Enabled = false;
             timer2.Dispose();
+            label2.Show();
         }
 
         public bool KeypadToNUD(NumericUpDown sender, Form owner)

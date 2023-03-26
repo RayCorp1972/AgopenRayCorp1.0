@@ -1081,6 +1081,7 @@ namespace AgOpenGPS
             else
             {
                 panelSim.Visible = false;
+                label2.Show();
                 timerSim.Enabled = false;
                 simulatorOnToolStripMenuItem.Checked = false;
                 //TimedMessageBox(3000, "Simulator Turning Off", "Application will Exit");
