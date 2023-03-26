@@ -821,7 +821,9 @@ namespace AgOpenGPS
             }
         }
 
-        private void btnStanleyPure_Click(object sender, EventArgs e)
+      
+
+    private void btnStanleyPure_Click(object sender, EventArgs e)
         {
             if (isTT)
             {

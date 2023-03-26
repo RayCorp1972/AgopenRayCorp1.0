@@ -864,7 +864,7 @@ namespace AgIO
         private void TrackandTrace()
         {
 
-                if (TrackTraceCounter == 20 && TrackerAan == true)
+                if (TrackTraceCounter == 40 && TrackerAan == true)
                 {
               
                     string Id = Properties.Settings.Default.TrackId;

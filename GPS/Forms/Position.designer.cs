@@ -82,7 +82,7 @@ namespace AgOpenGPS
         private int currentStepFix = 0;
         private const int totalFixSteps = 20;
         public vecFix2Fix[] stepFixPts = new vecFix2Fix[totalFixSteps];
-        public double distanceCurrentStepFix = 0, minFixStepDist = 1, startSpeed = 0.5;
+        public double distanceCurrentStepFix = 0, minFixStepDist = 0.5, startSpeed = 0.1;
 
         private double nowHz = 0, testDelta = 0;
 
@@ -154,7 +154,7 @@ namespace AgOpenGPS
                     {
                         //calculate current heading only when moving, otherwise use last
 
-                        if (Math.Abs(avgSpeed) < 1.5 && !isFirstHeadingSet)
+                        if (Math.Abs(avgSpeed) < 0.2 && !isFirstHeadingSet)
                             goto byPass;
 
                         if (!isFirstHeadingSet) //set in steer settings, Stanley

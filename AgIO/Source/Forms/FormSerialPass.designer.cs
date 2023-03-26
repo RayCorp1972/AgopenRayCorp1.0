@@ -200,7 +200,7 @@
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(337, 31);
             this.label23.TabIndex = 170;
-            this.label23.Text = "Stuur NTRIP naar GPS Using:";
+            this.label23.Text = "Stuur NTRIP naar GPS via:";
             this.label23.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // label21

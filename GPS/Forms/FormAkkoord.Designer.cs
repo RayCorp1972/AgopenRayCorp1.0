@@ -1,5 +1,5 @@
 ﻿
-namespace AgOpenGPS.Forms
+namespace AgOpenGPS
 {
     partial class FormAkkoord
     {
@@ -66,6 +66,7 @@ namespace AgOpenGPS.Forms
             this.button1.Size = new System.Drawing.Size(75, 72);
             this.button1.TabIndex = 2;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -76,6 +77,7 @@ namespace AgOpenGPS.Forms
             this.button2.Size = new System.Drawing.Size(75, 72);
             this.button2.TabIndex = 3;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // FormAkkoord
             // 
@@ -92,7 +94,7 @@ namespace AgOpenGPS.Forms
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Waarschuwing";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.FormAkkoord_Load);
             this.ResumeLayout(false);
 
         }

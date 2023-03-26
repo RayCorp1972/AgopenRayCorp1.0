@@ -366,8 +366,13 @@ namespace AgOpenGPS
         //Initialize items before the form Loads or is visible
         private void FormGPS_Load(object sender, EventArgs e)
        {
-          
-            
+
+            var form = new FormAkkoord(this);
+            {
+                form.ShowDialog(this);
+            }
+           
+
             this.MouseWheel += ZoomByMouseWheel;
 
             //start udp server is required

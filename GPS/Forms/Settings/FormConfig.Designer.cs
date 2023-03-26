@@ -5041,7 +5041,7 @@
             0,
             0});
             this.nudStartSpeed.Minimum = new decimal(new int[] {
-            5,
+            1,
             0,
             0,
             65536});

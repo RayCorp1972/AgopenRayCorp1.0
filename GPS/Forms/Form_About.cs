@@ -48,5 +48,7 @@ namespace AgOpenGPS
             if (!string.IsNullOrEmpty(gStr.v_AboutIntro))
                 System.Diagnostics.Process.Start(gStr.v_AboutIntro);
         }
+
+       
     }
 }
