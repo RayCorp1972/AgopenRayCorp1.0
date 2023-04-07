@@ -167,12 +167,12 @@ namespace AgIO
                 }
                 else
                 {
-                    mf.TimedMessageBox(2500, "No IP Located", "Can't Find: " + actualIP);
+                    mf.TimedMessageBox(2500, "Geen IP", "Kan niet vinden: " + actualIP);
                 }
             }
             catch (Exception)
             {
-                mf.TimedMessageBox(1500, "No IP Located", "Can't Find: " + actualIP);
+                mf.TimedMessageBox(1500, "Geen IP", "Kan niet vinden:  " + actualIP);
             }
         }
 
@@ -214,7 +214,7 @@ namespace AgIO
             {
                 tboxCasterIP.Text = "127.0.0.1";
                 tboxCasterIP.Focus();
-                mf.TimedMessageBox(2000, "Invalid IP Address", "Set to Default Local 127.0.0.1");
+                mf.TimedMessageBox(2000, "Ongeldig IP Adres", " 127.0.0.1");
             }
         }
 
@@ -350,13 +350,13 @@ namespace AgIO
 
             catch (SocketException)
             {
-                mf.TimedMessageBox(2000, "Socket Exception", "Invalid IP:Port");
+                mf.TimedMessageBox(2000, "Socket Fout", " IP:Port");
                 return;
             }
 
             catch (Exception)
             {
-                mf.TimedMessageBox(2000, "Exception", "Get Source Table Error");
+                mf.TimedMessageBox(2000, "Fout", "Haal Source Table Fout");
                 return;
             }
 
@@ -370,7 +370,7 @@ namespace AgIO
             }
             else
             {
-                mf.TimedMessageBox(2000, "Error", "No Source Data");
+                mf.TimedMessageBox(2000, "Fout", "Geen Data");
             }
 
             // Console.WriteLine(page);

@@ -401,7 +401,7 @@ namespace AgOpenGPS
         private void btnZeroWAS_Click(object sender, EventArgs e)
         {
             int offset = (int)(hsbarCountsPerDegree.Value * -mf.mc.actualSteerAngleDegrees + hsbarWasOffset.Value);
-            if (Math.Abs(offset) > 3900) mf.TimedMessageBox(2000, "Exceeded Range", "Excessive Steer Angle - Cannot Zero");
+            if (Math.Abs(offset) > 3900) mf.TimedMessageBox(2000, "Buiten bereik", "Buiten bereik - Kan niet naar 0");
             else
             {
                 hsbarWasOffset.Value += (int)(hsbarCountsPerDegree.Value * -mf.mc.actualSteerAngleDegrees);
