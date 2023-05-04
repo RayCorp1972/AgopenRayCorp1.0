@@ -1282,7 +1282,7 @@ namespace AgIO
             this.MinimumSize = new System.Drawing.Size(50, 56);
             this.Name = "FormLoop";
             this.Padding = new System.Windows.Forms.Padding(4);
-            this.Text = "AgIO v5.6";
+            this.Text = "RayCorp-Connect";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLoop_FormClosing);
             this.Load += new System.EventHandler(this.FormLoop_Load);
             this.Resize += new System.EventHandler(this.FormLoop_Resize);

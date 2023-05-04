@@ -1422,6 +1422,16 @@ namespace AgOpenGPS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CurveOff1 {
+            get {
+                object obj = ResourceManager.GetObject("CurveOff1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CurveOn {
             get {
                 object obj = ResourceManager.GetObject("CurveOn", resourceCulture);

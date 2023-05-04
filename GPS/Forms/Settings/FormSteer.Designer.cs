@@ -1279,9 +1279,9 @@
             this.cboxSteerEnable.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxSteerEnable.FormattingEnabled = true;
             this.cboxSteerEnable.Items.AddRange(new object[] {
-            "Geen",
-            "Schakelaar",
-            "Knop"});
+            "None",
+            "Switch",
+            "Button"});
             this.cboxSteerEnable.Location = new System.Drawing.Point(702, 261);
             this.cboxSteerEnable.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cboxSteerEnable.Name = "cboxSteerEnable";

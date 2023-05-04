@@ -18,7 +18,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>publish\</PublishUrl>
+    <PublishUrl>G:\AGOPEN GPS PROJECTEN\publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -28,7 +28,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>1.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -856,6 +856,7 @@
     <Content Include="btnImages\Images\Image1.png" />
     <Content Include="btnImages\Images\z_Floor.png" />
     <Content Include="btnImages\Images\z_NoGPS.png" />
+    <None Include="Resources\CurveOff.png" />
     <None Include="Resources\AgIO3.png" />
     <None Include="Resources\AgIO2.png" />
     <None Include="Resources\JobActive1.png" />
